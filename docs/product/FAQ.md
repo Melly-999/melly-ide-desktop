@@ -1,6 +1,6 @@
 # Frequently asked questions
 
-**Can I download a supported release?** No. Version 0.7.0-alpha.3 has been built locally as an unsigned Windows installer, but it has not been published and its installation acceptance is not complete. There is no download link, code signature or support commitment. Any approved pre-release will state its exact SHA-256 hashes and signing status.
+**Can I download a supported release?** No supported release exists. Version 0.7.0-alpha.3 is an unsigned, experimental Windows pre-release build. If it is published, the repository's Releases page lists its exact SHA-256 hashes and signing status. Its installer may download Microsoft's WebView2 bootstrapper when WebView2 is missing. There is no code signature or support commitment.
 
 **Is it a terminal?** The Windows Command Runner executes a single approved executable with an argument array. It is not a ConPTY interactive terminal.
 

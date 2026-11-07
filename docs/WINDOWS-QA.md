@@ -22,7 +22,7 @@ Trusted release-manifest SHA-256: `fb9a8f38060d7762e56a3efc2af81ccb4eee895f387cc
 
 These values identify the existing external QA package; obtain the full package and trusted checksum from the owner. The included `Install-MellyIDE.ps1` validates manifest identity, exact filename, length and hash; `-VerifyOnly` does not launch installation. Normal installation requires typing `INSTALL` in that verifier. Do not bypass Windows security controls.
 
-An existing system Microsoft Edge WebView2 Runtime is required. Node, Rust, Git and an editor are development tools and are not required by the installed static app. The installer does not download/install WebView2. Successful verification is not successful installation or launch.
+An existing system Microsoft Edge WebView2 Runtime is required. Node, Rust, Git and an editor are development tools and are not required by the installed static app. The installer does not download/install WebView2. This sentence describes the historical 0.5.0-rc.1 QA package only. The 0.7.0-alpha.3 installer uses Tauri's `downloadBootstrapper` mode: If no Microsoft Edge WebView2 Runtime is detected, the installer downloads and runs Microsoft's WebView2 bootstrapper, which needs an Internet connection. Installation is fully offline only when WebView2 is already present (Windows 11 normally includes it). Successful verification is not successful installation or launch.
 
 ## Source compatibility
 

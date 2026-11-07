@@ -1,6 +1,6 @@
 # Security policy and boundaries
 
-Melly IDE is a private alpha. Version 0.7.0-alpha.3 is a local, unsigned build that has not been published. No production security certification, code signature or supported public release is claimed. Current work targets Windows 11, Tauri 2 and WebView2.
+Melly IDE is an early alpha. Version 0.7.0-alpha.3 is an unsigned, experimental pre-release build. No production security certification, code signature or supported public release is claimed. Current work targets Windows 11, Tauri 2 and WebView2.
 
 ## Report a suspected vulnerability
 

@@ -2,10 +2,11 @@
 
 This log describes local source milestones. Entries do not establish commits, hosted CI, deployment or public releases.
 
-## 0.7.0-alpha.3 — local build, not published
+## 0.7.0-alpha.3 — unsigned pre-release build
 
 - Unsigned Windows x64 EXE and current-user NSIS installer built locally with a CycloneDX SBOM, third-party notice archive and source manifest.
-- Static and automated validation passed. Installation acceptance on an isolated Windows 11 guest, code signing and publication remain open owner gates.
+- Static and automated validation passed. A Windows Sandbox smoke test (administrator context, offline) passed for the app, install, reinstall and uninstall. Standard-user, Defender, UAC and SmartScreen acceptance and code signing remain open.
+- The installer uses WebView2 `downloadBootstrapper`: if WebView2 is missing, it downloads Microsoft's bootstrapper (Internet required).
 - Orbit branding is documented as AI-assisted and owner-directed. The historical MIT notice is preserved.
 
 ## Unreleased — MEGA-06

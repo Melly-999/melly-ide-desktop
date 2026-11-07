@@ -39,11 +39,11 @@ Preparation writes generated desktop assets. The build produces a developer exec
 
 ## Installing a distributed alpha build
 
-No build is currently distributed. If the owner approves a 0.7.0-alpha.3 pre-release, install it like this:
+Install a 0.7.0-alpha.3 pre-release only if it is published on the repository's Releases page:
 
 1. Download the installer only from the approved release page. Compare its SHA-256 (`Get-FileHash -Algorithm SHA256`) with the hash published on that page before running it.
 2. The build is unsigned unless the release page says otherwise. Windows SmartScreen may warn about an unrecognized publisher. Continue only if the hash matches.
-3. The NSIS installer installs for the current user and needs no administrator rights. It requires an existing Microsoft Edge WebView2 Runtime and does not download one.
+3. The NSIS installer installs for the current user under `%LOCALAPPDATA%\Melly IDE`. If no Microsoft Edge WebView2 Runtime is detected, the installer downloads and runs Microsoft's WebView2 bootstrapper, which needs an Internet connection. Installation is fully offline only when WebView2 is already present (Windows 11 normally includes it).
 4. Use a disposable test project. The app stores its profile under `%LOCALAPPDATA%\com.melly.ide`.
 5. Uninstall from Windows Settings → Apps. Report problems with the repository's bug report template, using synthetic data only.
 

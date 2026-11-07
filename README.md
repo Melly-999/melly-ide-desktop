@@ -28,7 +28,7 @@ Native screenshots, recordings and brand compositions are withheld from the publ
 
 | Capability | Current implementation | Boundary |
 |---|---|---|
-| Windows desktop | Tauri 2 shell, WebView2 frontend, Rust native commands | 0.7.0-alpha.3 built locally (unsigned EXE and NSIS installer); Windows installation acceptance pending; not published |
+| Windows desktop | Tauri 2 shell, WebView2 frontend, Rust native commands | 0.7.0-alpha.3 unsigned EXE and NSIS installer; Windows Sandbox smoke test passed in an administrator context; standard-user, Defender and SmartScreen acceptance pending |
 | Files and editing | Folder-scoped Explorer, tabs, explicit Save, conflict checks | Windows folder dialog per session; UTF-8 files up to 1 MiB |
 | Navigation | Command palette, Go to File, literal Find in Files, Go to Line | Bounded native index and search; `.git` and generated folders skipped |
 | Git review | Native read-only parser, change totals, hunks, side-by-side view | No Git executable, hooks, staging, commits or pushes |
@@ -44,7 +44,8 @@ Native screenshots, recordings and brand compositions are withheld from the publ
 - **Writable agent profiles remain gated.** Claude `edit` and Codex `workspace-write` are blocked by `PROFILE_GATED` until an owner-approved security contract exists.
 - **Paid provider execution acceptance is pending owner review.** No real Claude Code or Codex task was run for this documentation or its media.
 - **Browser mock testing is not native QA.** Browser suites that use a MOCK native bridge prove rendering and interaction only. This README's media comes from the native app.
-- **0.7.0-alpha.3 is a local build, not a published release.** An unsigned EXE and current-user NSIS installer were built and validated statically. Installation acceptance on an isolated Windows 11 guest is not complete. There is no public installer, download link, code signature or support commitment.
+- **0.7.0-alpha.3 is an unsigned, experimental pre-release build.** The app, installer, reinstall and uninstall worked in an isolated, offline Windows Sandbox (administrator context). Standard-user installation, Defender, UAC and SmartScreen behaviour are not yet tested. Any published copy appears only on the repository's Releases page with its SHA-256 hashes. There is no code signature or support commitment.
+- **WebView2 may be downloaded during installation.** If no Microsoft Edge WebView2 Runtime is detected, the installer downloads and runs Microsoft's WebView2 bootstrapper, which needs an Internet connection. Installation is fully offline only when WebView2 is already present (Windows 11 normally includes it).
 
 ## Quick start
 
@@ -115,7 +116,7 @@ Collaboration is owner-coordinated during the private alpha. Read [CONTRIBUTING.
 
 Copyright 2026 Mateusz Ozimkiewicz (Melly-999) for the original project material he controls.
 
-Melly IDE's own source code and documentation are licensed under the [Apache License, Version 2.0](LICENSE) (SPDX `Apache-2.0`). Version 0.7.0-alpha.3 exists only as a local, unsigned build and has not been published. If the owner approves a pre-release, it will list its exact SHA-256 hashes, signing status, third-party notices and source availability. No support commitment exists. Contributions are accepted under the same license, as described in [CONTRIBUTING.md](CONTRIBUTING.md).
+Melly IDE's own source code and documentation are licensed under the [Apache License, Version 2.0](LICENSE) (SPDX `Apache-2.0`). Version 0.7.0-alpha.3 is an unsigned pre-release build. Any published copy lists its exact SHA-256 hashes, signing status, third-party notices and source availability on the Releases page. No support commitment exists. Contributions are accepted under the same license, as described in [CONTRIBUTING.md](CONTRIBUTING.md).
 
 - **Third-party material** includes the checked-in Convex code-generation output. npm and Cargo packages are installed separately and keep their own licenses. `@cortexmemory/sdk` uses FSL-1.1-Apache-2.0, a source-available license that restricts competing commercial use.
 - **Images, icons, screenshots and recordings** (`.png`, `.gif`, `.svg`, `.ico`) are not covered by Apache-2.0, and no license to reuse them is granted.
