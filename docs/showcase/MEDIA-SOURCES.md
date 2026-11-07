@@ -2,7 +2,7 @@
 
 ## README media (0.7.0-alpha.3)
 
-Every image in [README.md](../../README.md) lives in [`docs/assets/readme/`](../assets/readme/). There are two kinds, and they are labeled differently on the page.
+The local media in [README.md](../../README.md) lives in [`docs/assets/readme/`](../assets/readme/). There are two kinds, and they are labeled differently on the page.
 
 **Real captures.** Five frames come from the Windows Sandbox acceptance run of the 0.7.0-alpha.3 executable on 2026-11-07. EXE SHA-256 `c1f8eeb3a9797f65223860ea9119e9307c34288adaa7f25b535875dfd505a7a8`, unsigned. The guest was an offline Windows 11 Sandbox (generic `WDAGUtilityAccount`), and the opened folder was a disposable `C:\synthetic-project` with `src/app.ts` and `README.md`. Each frame was cropped to the Melly IDE window only. That removes the Sandbox desktop wallpaper (third-party imagery), the desktop icons and the taskbar. Pixels inside the window were not edited, painted, scaled or reordered. No GIF or recording is used.
 
@@ -67,4 +67,4 @@ The older `docs/assets/screenshots/` directory and its provenance are preserved 
 
 The fixtures are self-contained. The capture harness stays in the external MEGA-SHOWCASE-02 evidence package because it references this machine's reviewed executable, Playwright installation and evidence paths. To reproduce: use a separate application identifier or a disposable Windows account, an empty WebView2 user-data folder, the exact synthetic repository and a folder-dialog guard that refuses every other path. Review every output frame before publication. Never select an owner folder or copy a private profile.
 
-The candidate is local and unpublished; owner review is required before sharing.
+The alpha.3 presentation is public in the [GitHub source revision](https://github.com/Melly-999/melly-ide-desktop/tree/653bcee05eb91894be5680df27403be5616dec75). The withheld historical media above has separate provenance.

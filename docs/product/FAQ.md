@@ -1,6 +1,6 @@
 # Frequently asked questions
 
-**Can I download a supported release?** No supported release exists. Version 0.7.0-alpha.3 is an unsigned, experimental Windows pre-release build. If it is published, the repository's Releases page lists its exact SHA-256 hashes and signing status. Its installer may download Microsoft's WebView2 bootstrapper when WebView2 is missing. There is no code signature or support commitment.
+**Can I download Melly IDE?** Yes. The [public v0.7.0-alpha.3 pre-release](https://github.com/Melly-999/melly-ide-desktop/releases/tag/v0.7.0-alpha.3) offers an NSIS installer and a standalone EXE for Windows 11 x64. Both are unsigned and experimental, with no automatic updater or support commitment. Setup may download Microsoft's WebView2 bootstrapper if the runtime is missing. [Download and verify](GETTING-STARTED-WINDOWS.md#download-and-install).
 
 **Is it a terminal?** The Windows Command Runner executes a single approved executable with an argument array. It is not a ConPTY interactive terminal.
 
@@ -12,7 +12,7 @@
 
 **Does the browser app run native commands?** No. Browser/PWA lacks the Windows broker. The SHOWCASE-01 browser bridge was a labeled MOCK used only for media capture; those images are superseded.
 
-**What do the screenshots prove?** The README media comes from the real Windows app (MEGA-08.2/09 build) on a synthetic repository: native folder dialog, Explorer, tabs, palette, Go to File, Find in Files and read-only Git. Execution stayed disabled, so it does not prove a disk write, CLI probe, agent run, paid execution or OS isolation. [Native capture](../showcase/NATIVE-CAPTURE.md).
+**What do the screenshots show?** The README uses real captures of the unsigned 0.7.0-alpha.3 executable from a Windows Sandbox session with a synthetic project. They show the Local Folder Explorer, a file saved to disk, navigation and search, and the native dialog for enabling execution. The session did not open a Git repository or run an agent job. [Media sources](../showcase/MEDIA-SOURCES.md#readme-media-070-alpha3).
 
 **Is there cloud sync?** Manual backup/transfer and local recovery exist. Account-private source synchronization is not an established capability. Optional auth/backend modules do not activate providers automatically.
 

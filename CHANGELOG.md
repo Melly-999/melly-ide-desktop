@@ -1,12 +1,16 @@
 # Changelog
 
-This log describes local source milestones. Entries do not establish commits, hosted CI, deployment or public releases.
+This log records source milestones and identifies public releases where applicable.
 
-## Unreleased — documentation
+## Unreleased — post-release download documentation
+
+- Link the README and Windows guide to the [public v0.7.0-alpha.3 pre-release](https://github.com/Melly-999/melly-ide-desktop/releases/tag/v0.7.0-alpha.3), with direct NSIS and standalone downloads, separate SHA-256 hashes, and installation and security guidance. This milestone updates documentation only.
+
+## Alpha.3 GitHub presentation
 
 - Redesign the README as a product landing page with original Orbit brand compositions and real 0.7.0-alpha.3 Windows Sandbox captures of a synthetic project. Provenance is in [Media sources](docs/showcase/MEDIA-SOURCES.md).
 - Add a 1280 × 640 social preview image, an issue chooser with security and getting-started links, and owner steps for repository settings in [GitHub presentation](docs/showcase/GITHUB-PRESENTATION.md).
-- No application, native, installer or release change.
+- The presentation update used the existing alpha.3 binaries.
 
 ## 0.7.0-alpha.3 — unsigned pre-release build
 

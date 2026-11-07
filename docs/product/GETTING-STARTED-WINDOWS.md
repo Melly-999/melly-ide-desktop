@@ -1,6 +1,38 @@
 # Getting started on Windows
 
-Run every command from the repository root. No installer is published yet, so building from source is currently the only way to try Melly IDE.
+Melly IDE v0.7.0-alpha.3 is a public, unsigned experimental pre-release for Windows 11 x64. Choose the current-user installer or the standalone executable from the [GitHub release](https://github.com/Melly-999/melly-ide-desktop/releases/tag/v0.7.0-alpha.3).
+
+## Download and install
+
+1. Download the [NSIS installer](https://github.com/Melly-999/melly-ide-desktop/releases/download/v0.7.0-alpha.3/Melly.IDE_0.7.0-alpha.3_x64-setup.exe) or the [standalone EXE](https://github.com/Melly-999/melly-ide-desktop/releases/download/v0.7.0-alpha.3/melly-ide-desktop.exe). Download the [third-party notices and corresponding source archive](https://github.com/Melly-999/melly-ide-desktop/releases/download/v0.7.0-alpha.3/THIRD-PARTY-NOTICES-0.7.0-alpha.3.zip) alongside either executable.
+2. Open PowerShell in the download folder. Run the command for your file and compare the result with the corresponding SHA-256 below. If the hash differs, stop.
+
+   ```powershell
+   Get-FileHash -Algorithm SHA256 -LiteralPath '.\Melly.IDE_0.7.0-alpha.3_x64-setup.exe'
+   Get-FileHash -Algorithm SHA256 -LiteralPath '.\melly-ide-desktop.exe'
+   ```
+
+   **NSIS installer SHA-256**
+
+   ```text
+   6cbe545412127f18431e416631c033fff9f2b39f4cee34306e2471d59dc3fc6b
+   ```
+
+   **Standalone EXE SHA-256**
+
+   ```text
+   c1f8eeb3a9797f65223860ea9119e9307c34288adaa7f25b535875dfd505a7a8
+   ```
+
+   A match confirms the downloaded bytes against the published hash. It provides no code signature or assurance of software safety. The [checksum companion](https://github.com/Melly-999/melly-ide-desktop/releases/download/v0.7.0-alpha.3/SHA256SUMS.txt) uses the installer's original filename and omits the standalone EXE.
+
+3. Both executables are unsigned. SmartScreen or Smart App Control may warn or block them. Keep Windows security protections enabled and stop if Windows or Defender reports a security alert.
+4. Run setup to install for the current user under `%LOCALAPPDATA%\Melly IDE`. Both variants require Microsoft Edge WebView2 Runtime. If it is missing, setup may download and run Microsoft's bootstrapper, which requires internet access. The standalone EXE runs directly once WebView2 is present.
+5. Use a disposable project. The app stores its profile under `%LOCALAPPDATA%\com.melly.ide`. Uninstall the NSIS version from **Windows Settings → Apps**. Uninstall keeps your profile unless you select the data-deletion option.
+
+The alpha has no automatic updater or guaranteed support. Report reproducible problems with synthetic data through [GitHub Issues](https://github.com/Melly-999/melly-ide-desktop/issues). Follow the [security reporting policy](../../SECURITY.md) for vulnerabilities.
+
+The binaries were built from [`eedeab979a08fb4ef57ded66e207915c9484f688`](https://github.com/Melly-999/melly-ide-desktop/tree/eedeab979a08fb4ef57ded66e207915c9484f688). The release tag points to `653bcee05eb91894be5680df27403be5616dec75`, which includes later documentation and presentation changes.
 
 ## Browser developer view
 
@@ -36,16 +68,6 @@ cargo run --locked --target x86_64-pc-windows-msvc --manifest-path src-tauri/Car
 ```
 
 Preparation writes generated desktop assets. The build produces a developer executable. The local run opens a Windows application profile, so use a disposable profile and synthetic folder for QA. The README's screenshots come from the 0.7.0-alpha.3 Windows Sandbox acceptance run. See [Media sources](../showcase/MEDIA-SOURCES.md) for their provenance.
-
-## Installing a distributed alpha build
-
-Install a 0.7.0-alpha.3 pre-release only if it is published on the repository's Releases page:
-
-1. Download the installer only from the approved release page. Compare its SHA-256 (`Get-FileHash -Algorithm SHA256`) with the hash published on that page before running it.
-2. The build is unsigned unless the release page says otherwise. Windows SmartScreen may warn about an unrecognized publisher. Continue only if the hash matches.
-3. The NSIS installer installs for the current user under `%LOCALAPPDATA%\Melly IDE`. If no Microsoft Edge WebView2 Runtime is detected, the installer downloads and runs Microsoft's WebView2 bootstrapper, which needs an Internet connection. Installation is fully offline only when WebView2 is already present (Windows 11 normally includes it).
-4. Use a disposable test project. The app stores its profile under `%LOCALAPPDATA%\com.melly.ide`.
-5. Uninstall from Windows Settings → Apps. Report problems with the repository's bug report template, using synthetic data only.
 
 ## Verification
 

@@ -9,11 +9,13 @@
 
 A local-first coding workspace for Windows. Open a real folder, edit deliberately, review Git changes without touching them, and let commands and agents run only after you approve each one.
 
-[![Status: experimental alpha](https://img.shields.io/badge/status-experimental%20alpha-8b5cf6?style=flat-square)](#roadmap) [![Platform: Windows 11 x64](https://img.shields.io/badge/platform-Windows%2011%20x64-4f46e5?style=flat-square)](#get-started) [![Built with Tauri 2 and Rust](https://img.shields.io/badge/built%20with-Tauri%202%20%C2%B7%20Rust-3730a3?style=flat-square)](#architecture) [![Code license: Apache-2.0](https://img.shields.io/badge/code%20license-Apache--2.0-312e81?style=flat-square)](#license-and-brand)
+[![Status: experimental alpha](https://img.shields.io/badge/status-experimental%20alpha-8b5cf6?style=flat-square)](#roadmap) [![Platform: Windows 11 x64](https://img.shields.io/badge/platform-Windows%2011%20x64-4f46e5?style=flat-square)](#download-and-install) [![Built with Tauri 2 and Rust](https://img.shields.io/badge/built%20with-Tauri%202%20%C2%B7%20Rust-3730a3?style=flat-square)](#architecture) [![Code license: Apache-2.0](https://img.shields.io/badge/code%20license-Apache--2.0-312e81?style=flat-square)](#license-and-brand)
 
-**[Build from source →](#get-started)** &nbsp;·&nbsp; [Explore features](#features) &nbsp;·&nbsp; [Security model](docs/product/SECURITY-MODEL.md) &nbsp;·&nbsp; [Roadmap](#roadmap)
+**[Download for Windows →](https://github.com/Melly-999/melly-ide-desktop/releases/download/v0.7.0-alpha.3/Melly.IDE_0.7.0-alpha.3_x64-setup.exe)**
 
-<sub>Version 0.7.0-alpha.3 · Windows 11 x64 · Unsigned experimental build · No installer has been published yet</sub>
+[Release notes](https://github.com/Melly-999/melly-ide-desktop/releases/tag/v0.7.0-alpha.3) · [Build from source](#build-from-source) · [Security model](docs/product/SECURITY-MODEL.md)
+
+<sub>Melly IDE v0.7.0-alpha.3 · Windows 11 x64 · Experimental Public Alpha · Unsigned · No production support commitment</sub>
 
 </div>
 
@@ -101,7 +103,7 @@ An approval covers one exact program, argument list, folder and profile. It is s
 |---|---|
 | Agent Control Center | Detects Claude Code and Codex CLI, probes versions and queues read-only jobs. No real paid-provider task has been accepted yet |
 | Live preview | Runs in a separate window with no app capabilities. Network isolation is not fully evidenced |
-| Windows installer | Unsigned per-user NSIS build. Passed a Windows Sandbox smoke test in an administrator context. Not published. If WebView2 is missing, it downloads Microsoft's WebView2 bootstrapper, which needs Internet access |
+| Windows installer | [Public alpha download](#download-and-install). Unsigned, per-user NSIS installer. Passed an administrator-context Windows Sandbox smoke test. Standard-user and Windows security acceptance are pending |
 | Browser developer view | `npm start` renders the frontend without native folders, Git or execution |
 | MCP, automations, legacy chat | Include simulated or disconnected surfaces |
 
@@ -115,10 +117,45 @@ An approval covers one exact program, argument list, folder and profile. It is s
 
 The [feature inventory](docs/product/FEATURES.md) maps each capability to its code, tests and acceptance status.
 
+## Download and install
+
+- **Recommended.** [Download the NSIS installer](https://github.com/Melly-999/melly-ide-desktop/releases/download/v0.7.0-alpha.3/Melly.IDE_0.7.0-alpha.3_x64-setup.exe). Verify the file below, then run setup to install for the current Windows user.
+- **Standalone.** [Download the standalone EXE](https://github.com/Melly-999/melly-ide-desktop/releases/download/v0.7.0-alpha.3/melly-ide-desktop.exe). Verify it before running it directly. It requires WebView2 to be installed.
+
+### Verify your download
+
+In PowerShell, from the folder where you saved the download, run the command for the file you chose.
+
+```powershell
+Get-FileHash -Algorithm SHA256 -LiteralPath '.\Melly.IDE_0.7.0-alpha.3_x64-setup.exe'
+Get-FileHash -Algorithm SHA256 -LiteralPath '.\melly-ide-desktop.exe'
+```
+
+**NSIS installer SHA-256**
+
+```text
+6cbe545412127f18431e416631c033fff9f2b39f4cee34306e2471d59dc3fc6b
+```
+
+**Standalone EXE SHA-256**
+
+```text
+c1f8eeb3a9797f65223860ea9119e9307c34288adaa7f25b535875dfd505a7a8
+```
+
+A match verifies the file's integrity and identity against the published hash. Both files remain unsigned, and a matching hash gives no assurance of software safety. The [checksum companion](https://github.com/Melly-999/melly-ide-desktop/releases/download/v0.7.0-alpha.3/SHA256SUMS.txt) lists the installer under its original filename and omits the standalone EXE.
+
+### Before you run it
+
+- Use **Windows 11 x64** with Microsoft Edge WebView2 Runtime. If WebView2 is missing, setup may download and run Microsoft's bootstrapper, which requires internet access.
+- This is an **unsigned experimental pre-release**. SmartScreen or Smart App Control may warn or block. Keep Windows security protections enabled.
+- Use a disposable test project. The alpha has no automatic updater or guaranteed support.
+
+For install and uninstall steps, see [Getting started on Windows](docs/product/GETTING-STARTED-WINDOWS.md#download-and-install). For feedback, use [GitHub Issues](https://github.com/Melly-999/melly-ide-desktop/issues) with synthetic data. Report vulnerabilities through the [security policy](SECURITY.md).
+
 ## Get started
 
-> [!IMPORTANT]
-> **No installer is published.** A 0.7.0-alpha.3 Windows installer exists only as an unsigned local build. If one is published later, it will appear on this repository's Releases page with SHA-256 hashes. Until then, run Melly IDE from source.
+### Build from source
 
 **Requirements**
 
@@ -169,7 +206,7 @@ The Rust approval broker owns execution authority. Nothing in the frontend can a
 |---|---|---|
 | Windows shell, folder editing and recovery | Real read-only agent tasks against a paid provider | Writable agent profiles, after a security contract and independent review |
 | Palette, Go to File, Find in Files | Standard-user, Defender, SmartScreen and code-signing checks for the installer | Interactive terminal |
-| Read-only Git review | QA follow-ups: preview IPC timeouts, high-DPI and assistive technology | Public distribution and account-private source sync |
+| Read-only Git review | QA follow-ups: preview IPC timeouts, high-DPI and assistive technology | Account-private source sync |
 | Approved one-shot runner and read-only agent orchestration | Owner review of daily workflows | Supported macOS and Linux builds |
 
 No date is a delivery commitment. Details: [product roadmap](docs/product/ROADMAP.md).
@@ -178,7 +215,7 @@ No date is a delivery commitment. Details: [product roadmap](docs/product/ROADMA
 
 | Guide | What it covers |
 |---|---|
-| [Getting started](docs/product/GETTING-STARTED-WINDOWS.md) | Browser and native developer commands |
+| [Getting started](docs/product/GETTING-STARTED-WINDOWS.md) | Windows downloads, verification and developer commands |
 | [Features](docs/product/FEATURES.md) | Capability inventory, evidence and acceptance |
 | [Architecture](docs/product/ARCHITECTURE.md) | Frontend, native and provider ownership |
 | [Security model](docs/product/SECURITY-MODEL.md) | Approvals, external-tool limits, recovery and privacy |

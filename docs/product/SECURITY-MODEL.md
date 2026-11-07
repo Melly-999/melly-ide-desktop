@@ -1,6 +1,6 @@
 # Security model and limits
 
-Melly IDE is a private alpha / internal QA candidate. This document describes current implementation boundaries; it is not a security certification. Use the existing [reporting policy](../../SECURITY.md) for disclosure. Its terminal/agent availability paragraph predates MEGA-08; current execution contracts are in [MEGA-08](../MEGA-08.md) and [MEGA-09](../MEGA-09.md).
+Melly IDE v0.7.0-alpha.3 is an unsigned experimental public pre-release for Windows 11 x64. This document describes current implementation boundaries. Use the [reporting policy](../../SECURITY.md) for disclosure and [MEGA-08](../MEGA-08.md) and [MEGA-09](../MEGA-09.md) for the current execution contracts.
 
 ## Files, save and recovery
 
@@ -27,6 +27,6 @@ The separate native preview window has no Tauri capability and the dispatcher ch
 
 ## Acceptance and media
 
-Real paid Claude/Codex task acceptance, writable-agent policy, broader crash/reparse stress, assistive technology/high-DPI checks and distribution remain separate gates. The showcases change documentation/media only. They execute no provider task, install no tool, enable no profile and rerun no native QA suite.
+Real paid Claude/Codex task acceptance, writable-agent policy, broader crash/reparse stress, and assistive technology and high-DPI checks remain separate gates. The public alpha's administrator-context Sandbox smoke test leaves standard-user, Defender, UAC, SmartScreen and Mark-of-the-Web acceptance open.
 
-The README media is a native Windows capture with execution disabled. Its harness used a separate application identifier, a redirected WebView2 profile, a loopback-only DevTools port for page input and a folder-dialog guard limited to the synthetic repository. These are QA-session measures; they change no shipped permission, capability or broker behavior. Superseded SHOWCASE-01 media used a labeled MOCK bridge. Historical native media is preserved in its original directory. [Native capture](../showcase/NATIVE-CAPTURE.md).
+The current README captures come from the 0.7.0-alpha.3 Windows Sandbox session with a synthetic project. They show the native enable-execution dialog. The session did not run an agent job. The [media provenance](../showcase/MEDIA-SOURCES.md) separates these captures from the superseded browser mock and older native session.
