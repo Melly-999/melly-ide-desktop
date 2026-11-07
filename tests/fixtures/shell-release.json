@@ -1,0 +1,21 @@
+{
+  "version": "v27-20261107",
+  "assetCount": 68,
+  "sha256": "8edc0747c681d92fdf889446ca3a9cf2328a63e0ef9822e28f562670e625b99a",
+  "previousVersions": [
+    "v14-20261025",
+    "v15-20261025",
+    "v16-20261025",
+    "v17-20261025",
+    "v18-20261025",
+    "v19-20261026",
+    "v20-20261026",
+    "v21-20261026",
+    "v22-20261029",
+    "v23-20261106",
+    "v24-20261107",
+    "v25-20261107",
+    "v26-20261107"
+  ],
+  "note": "Update with node scripts/shell-fingerprint.mjs after bumping SHELL_VERSION."
+}

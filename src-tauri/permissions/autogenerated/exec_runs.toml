@@ -1,0 +1,11 @@
+# Automatically generated - DO NOT EDIT!
+
+[[permission]]
+identifier = "allow-exec-runs"
+description = "Enables the exec_runs command without any pre-configured scope."
+commands.allow = ["exec_runs"]
+
+[[permission]]
+identifier = "deny-exec-runs"
+description = "Denies the exec_runs command without any pre-configured scope."
+commands.deny = ["exec_runs"]

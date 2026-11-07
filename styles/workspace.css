@@ -1,0 +1,25 @@
+.real-workspace { margin: 12px auto; padding: 16px; border: 1px solid #57536c; border-radius: 16px; background: #15131e; color: #f4f2fa; min-width: 0; max-width: 100%; }
+.real-workspace h2 { font-size: 1.15rem; margin: 0 0 12px; }
+.real-workspace label { display: block; margin: 8px 0 4px; }
+.real-workspace button, .real-workspace input, .real-workspace select { min-height: 44px; min-width: 44px; padding: 10px; border: 1px solid #79718e; border-radius: 8px; background: #242033; color: #fff; font: inherit; max-width: 100%; }
+.real-workspace select, .real-workspace input { width: 100%; min-width: 0; }
+.workspace-actions { display: flex; flex-wrap: wrap; gap: 8px; margin-top: 10px; }
+.real-workspace button { cursor: pointer; overflow-wrap: anywhere; text-align: left; }
+.real-workspace button:disabled { opacity: .65; cursor: default; }
+.real-workspace :focus-visible { outline: 3px solid #d1b8ff; outline-offset: 3px; }
+.real-workspace p { font-size: .875rem; line-height: 1.5; overflow-wrap: anywhere; margin: 10px 0; }
+.real-workspace [data-error=true] { color: #ffb9b9; }
+.workspace-tree-row { display: grid; grid-template-columns: minmax(0,1fr) auto auto; gap: 5px; margin: 5px 0; }
+.workspace-tree-row > button:first-child { white-space: normal; }
+.real-workspace details { border-top: 1px solid #57536c; margin-top: 10px; padding-top: 5px; min-width: 0; }
+.real-workspace summary { cursor: pointer; padding: 12px 0; min-height: 44px; }
+.real-workspace pre { max-height: 300px; overflow: auto; white-space: pre; font-size: .8rem; }
+#githubTree { display: grid; gap: 5px; max-height: 300px; overflow: auto; margin: 8px 0; }
+.workspace-empty { padding: 20px; }
+.workspace-storage { margin-top: 12px; padding: 12px; border: 1px solid #79718e; border-radius: 8px; overflow-wrap: anywhere; }
+.workspace-storage h3 { margin: 0 0 8px; font-size: 1rem; }
+.workspace-storage button { min-width: 44px; min-height: 44px; }
+.workspace-backup-output { margin-top: 12px; padding: 12px; border: 1px solid #79718e; border-radius: 8px; }
+.workspace-backup-output a { display: inline-flex; align-items: center; min-width: 44px; min-height: 44px; padding: 10px; color: #e1ceff; text-decoration: underline; overflow-wrap: anywhere; }
+.real-workspace ol { padding-inline-start: 24px; font-size: .875rem; line-height: 1.6; }
+@media (max-width: 430px) { .real-workspace { padding: 10px; } .workspace-tree-row { grid-template-columns: minmax(0,1fr) auto; } .workspace-tree-row > button:first-child { grid-column: 1/-1; } }

@@ -1,0 +1,7 @@
+{
+  "README.md": "# Orbit workspace\n\nA synthetic project for the Melly IDE showcase.\n\n- Explore source files\n- Find agentStatus across the project\n- Review changes before saving\n\nNo provider calls. No private data.\n",
+  "src/app.ts": "// Orbit workspace · synthetic showcase project\nimport { AgentPanel } from \"./components/AgentPanel\";\n\nexport const workspace = {\n  name: \"Orbit workspace\",\n  mode: \"local-first\",\n  agentStatus: \"awaiting approval\",\n};\n\nexport function renderWorkspace(root: HTMLElement) {\n  root.innerHTML = `\n    <main class=\"workspace\">\n      <h1>${workspace.name}</h1>\n      <p>Review every change. Keep control.</p>\n    </main>\n  `;\n  AgentPanel(root, workspace.agentStatus);\n}\n",
+  "src/components/AgentPanel.tsx": "// Synthetic component · no agent is executed\nexport function AgentPanel(root: HTMLElement, agentStatus: string) {\n  const panel = document.createElement(\"section\");\n  panel.className = \"agent-panel\";\n  panel.textContent = `Agent: ${agentStatus}`;\n  root.append(panel);\n}\n",
+  "src/styles.css": ":root {\n  color-scheme: dark;\n  --surface: #0b0c17;\n  --accent: #a78bfa;\n}\n\n.workspace {\n  max-width: 72rem;\n  margin: 0 auto;\n  padding: 2rem;\n}\n",
+  "package.json": "{\n  \"name\": \"orbit-showcase-fixture\",\n  \"private\": true,\n  \"description\": \"Synthetic media fixture; no installed dependencies\"\n}\n"
+}

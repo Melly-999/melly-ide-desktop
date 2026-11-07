@@ -1,0 +1,273 @@
+/* styles/main.css - Melly IDE dark interface system */
+:root {
+  --bg-primary: #000000;
+  --bg-secondary: #0D0E12;
+  --bg-card: #16161A;
+  --bg-card-hover: #1E1F24;
+  --bg-input: #1C1C1E;
+  
+  --text-primary: #FFFFFF;
+  --text-secondary: #8E8E93;
+  --text-muted: #A4A4AD;
+  
+  --accent-blue: #0A84FF;
+  --accent-blue-hover: #0077E6;
+  --accent-coral: #FF6363;
+  --accent-green: #30D158;
+  --accent-orange: #FF9F0A;
+  --accent-purple: #BF5AF2;
+
+  --border-subtle: rgba(255, 255, 255, 0.08);
+  --border-card: rgba(255, 255, 255, 0.12);
+  --border-highlight: #FF6363;
+
+  --radius-sm: 8px;
+  --radius-md: 12px;
+  --radius-lg: 16px;
+  --radius-xl: 24px;
+  --radius-full: 9999px;
+
+  --font-sans: -apple-system, BlinkMacSystemFont, "SF Pro Display", "SF Pro Text", "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+  --font-mono: "SF Mono", "JetBrains Mono", Menlo, Monaco, Consolas, "Courier New", monospace;
+}
+
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+  -webkit-tap-highlight-color: transparent;
+}
+
+html, body {
+  background-color: var(--bg-primary);
+  color: var(--text-primary);
+  font-family: var(--font-sans);
+  min-height: 100vh;
+  overflow-x: hidden;
+  -webkit-font-smoothing: antialiased;
+}
+
+/* App Master Header / Switcher Bar */
+.app-master-header {
+  position: sticky;
+  top: 0;
+  z-index: 100;
+  background: rgba(13, 14, 18, 0.85);
+  backdrop-filter: blur(20px);
+  -webkit-backdrop-filter: blur(20px);
+  border-bottom: 1px solid var(--border-subtle);
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 10px 16px;
+  gap: 12px;
+}
+
+.brand-badge {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  font-weight: 600;
+  font-size: 15px;
+  letter-spacing: -0.3px;
+}
+
+.brand-logo-icon {
+  width: 22px;
+  height: 22px;
+  display: grid;
+  place-items: center;
+  background: linear-gradient(145deg, #7C5CFC, #22C7A9);
+  border-radius: 7px;
+  box-shadow: 0 0 14px rgba(124, 92, 252, 0.35);
+  color: #FFFFFF;
+  font-size: 13px;
+  font-weight: 800;
+  line-height: 1;
+}
+
+.view-nav-group {
+  display: flex;
+  background: rgba(255, 255, 255, 0.06);
+  padding: 3px;
+  border-radius: var(--radius-full);
+  gap: 2px;
+}
+
+.app-nav-btn {
+  background: transparent;
+  border: none;
+  color: var(--text-secondary);
+  font-size: 13px;
+  font-weight: 500;
+  padding: 6px 14px;
+  border-radius: var(--radius-full);
+  cursor: pointer;
+  transition: all 0.2s cubic-bezier(0.2, 0.9, 0.3, 1);
+}
+
+.app-nav-btn:hover {
+  color: var(--text-primary);
+}
+
+.app-nav-btn.active {
+  background: rgba(255, 255, 255, 0.16);
+  color: #FFFFFF;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.3);
+}
+
+.header-controls {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.btn-ctrl-chip {
+  background: rgba(255, 255, 255, 0.08);
+  border: 1px solid var(--border-subtle);
+  color: var(--text-primary);
+  font-size: 12px;
+  font-weight: 600;
+  padding: 6px 10px;
+  border-radius: var(--radius-md);
+  cursor: pointer;
+  transition: background 0.15s ease;
+}
+
+.btn-ctrl-chip:hover {
+  background: rgba(255, 255, 255, 0.14);
+}
+
+/* App Wrapper */
+.app-wrapper {
+  max-width: 100%;
+  margin: 0 auto;
+  min-height: calc(100vh - 54px);
+  display: flex;
+  justify-content: center;
+}
+
+/* Phone Frame Mode (simulates high-end iPhone on wide desktop displays) */
+.app-wrapper.mobile-frame-mode {
+  padding: 24px 16px;
+}
+
+.app-wrapper.mobile-frame-mode .view-screen {
+  max-width: 393px;
+  min-height: 844px;
+  border-radius: 48px;
+  border: 4px solid #2C2C2E;
+  box-shadow: 0 25px 60px rgba(0, 0, 0, 0.8), 0 0 0 1px rgba(255, 255, 255, 0.1);
+  overflow: hidden;
+  background: #000000;
+}
+
+.view-screen {
+  width: 100%;
+  max-width: 500px;
+  margin: 0 auto;
+  min-height: calc(100vh - 54px);
+  position: relative;
+  background: #000000;
+}
+
+#viewStudio {
+  max-width: 900px;
+}
+
+/* Responsive adjustment */
+@media (max-width: 600px) {
+  .app-master-header {
+    display: grid;
+    grid-template-columns: auto 1fr;
+    width: 100%;
+    min-width: 0;
+    overflow: hidden;
+    padding: 8px 10px;
+    gap: 8px;
+  }
+  .brand-badge {
+    grid-column: 1;
+  }
+  .view-nav-group {
+    grid-column: 1 / -1;
+    grid-row: 2;
+    display: grid;
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+    width: 100%;
+    min-width: 0;
+  }
+  .app-nav-btn {
+    min-width: 0;
+    padding: 6px 4px;
+    font-size: 12px;
+    line-height: 1.2;
+    white-space: normal;
+  }
+  .header-controls {
+    grid-column: 2;
+    justify-content: flex-end;
+    min-width: 0;
+  }
+  #toggleDeviceFrame {
+    display: none;
+  }
+  .btn-ctrl-chip {
+    padding: 5px 7px;
+    font-size: 12px;
+  }
+  .app-wrapper.mobile-frame-mode {
+    padding: 0;
+  }
+  .app-wrapper.mobile-frame-mode .view-screen {
+    width: 100%;
+    max-width: 100%;
+    min-width: 0;
+    min-height: calc(100vh - 94px);
+    border: 0;
+    border-radius: 0;
+    box-shadow: none;
+    overflow-x: hidden;
+  }
+}
+
+/* UI-02 shared interaction tokens; violet surfaces keep normal text at AA. */
+:root {
+  --accent-primary: #7C6FFF;
+  --accent-secondary: #6450F0;
+  --accent-blue: var(--accent-secondary);
+  --accent-blue-hover: #5843DC;
+  --text-muted: #A4A4AD;
+}
+button, input, textarea { font-family: inherit; }
+button { min-width: 44px; min-height: 44px; }
+button:focus-visible, input:focus-visible, textarea:focus-visible, [tabindex]:focus-visible {
+  outline: 3px solid #C7BFFF;
+  outline-offset: -3px;
+}
+.btn-ctrl-chip { min-width: 44px; }
+.app-master-header { flex-wrap: wrap; }
+.app-wrapper.mobile-frame-mode .studio-grid-layout { display: flex; height: auto; }
+.app-wrapper.mobile-frame-mode .view-screen { border-radius: 32px; }
+@media (prefers-reduced-motion: reduce) {
+  *, *::before, *::after { animation: none !important; transition: none !important; scroll-behavior: auto !important; }
+}
+@media (max-width: 600px) {
+  .app-master-header { overflow: visible; }
+  .app-wrapper.mobile-frame-mode .view-screen { border-radius: 0; }
+}
+
+@media (min-width: 601px) { .app-wrapper.mobile-frame-mode #viewStudio { max-width: 393px; } }
+
+/* Application cache readiness is separate from the editor's file-save state. */
+.offline-shell-status {
+  padding: 8px 16px;
+  border-bottom: 1px solid var(--border-subtle);
+  background: #0D0E12;
+  color: #C7BFFF;
+  font-size: 12px;
+  line-height: 1.5;
+  overflow-wrap: anywhere;
+}
+.offline-shell-status[data-state="failed"],
+.offline-shell-status[data-state="update-failed"] { color: #FFD19A; }

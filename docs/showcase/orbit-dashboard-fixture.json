@@ -1,0 +1,39 @@
+{
+  "name": "orbit-dashboard",
+  "purpose": "Disposable synthetic TypeScript/React workspace used only for MEGA-SHOWCASE-02 native captures. No dependencies installed; no provider calls; no private data.",
+  "git": {
+    "branch": "main",
+    "head": "75ebcf8d130bc7a0f28cfd8168c760e48b332302",
+    "author": "Orbit Showcase <showcase@example.invalid>",
+    "date": "2026-11-01T10:00:00+01:00",
+    "message": "Initial synthetic dashboard"
+  },
+  "committedFiles": {
+    "README.md": "# Orbit Dashboard\n\nSynthetic TypeScript + React project used only for the Melly IDE native showcase.\n\n- `src/App.tsx` renders the dashboard shell\n- `src/lib/approvals.ts` models per-run approval state\n- `tests/approvals.test.ts` covers the approval rules\n\nNo dependencies are installed. No provider calls. No private data.\n",
+    "package.json": "{\n  \"name\": \"orbit-dashboard\",\n  \"private\": true,\n  \"version\": \"0.1.0\",\n  \"description\": \"Synthetic showcase fixture; dependencies are intentionally not installed\",\n  \"scripts\": {\n    \"test\": \"vitest run\",\n    \"typecheck\": \"tsc --noEmit\"\n  }\n}\n",
+    "src/App.tsx": "import { WorkspaceHeader } from \"./components/WorkspaceHeader\";\nimport { AgentStatusCard } from \"./components/AgentStatusCard\";\nimport { useAgentQueue } from \"./hooks/useAgentQueue\";\n\nexport function App() {\n  const { jobs, pending } = useAgentQueue();\n\n  return (\n    <main className=\"dashboard\">\n      <WorkspaceHeader title=\"Orbit Dashboard\" pending={pending} />\n      <section className=\"grid\">\n        {jobs.map((job) => (\n          <AgentStatusCard key={job.id} job={job} />\n        ))}\n      </section>\n    </main>\n  );\n}\n",
+    "src/components/AgentStatusCard.tsx": "import type { Job } from \"../lib/approvals\";\nimport { describeStatus } from \"../lib/approvals\";\n\nexport function AgentStatusCard({ job }: { job: Job }) {\n  return (\n    <article className={`card card--${job.status}`}>\n      <h2>{job.title}</h2>\n      <p>{describeStatus(job)}</p>\n    </article>\n  );\n}\n",
+    "src/components/WorkspaceHeader.tsx": "type Props = { title: string; pending: number };\n\nexport function WorkspaceHeader({ title, pending }: Props) {\n  return (\n    <header className=\"workspace-header\">\n      <h1>{title}</h1>\n      <span className=\"badge\">{pending} awaiting approval</span>\n    </header>\n  );\n}\n",
+    "src/hooks/useAgentQueue.ts": "import { useMemo } from \"react\";\nimport fixtures from \"../../tests/fixtures/jobs.json\";\nimport type { Job } from \"../lib/approvals\";\n\nexport function useAgentQueue() {\n  const jobs = fixtures as Job[];\n  const pending = useMemo(() => jobs.filter((job) => job.status === \"awaiting\").length, [jobs]);\n  return { jobs, pending };\n}\n",
+    "src/lib/approvals.ts": "export type JobStatus = \"awaiting\" | \"approved\" | \"rejected\";\n\nexport interface Job {\n  id: string;\n  title: string;\n  status: JobStatus;\n}\n\nexport function describeStatus(job: Job): string {\n  switch (job.status) {\n    case \"awaiting\":\n      return \"Waiting for your approval\";\n    case \"approved\":\n      return \"Approved for one run\";\n    case \"rejected\":\n      return \"Rejected — nothing was executed\";\n  }\n}\n\nexport function canRun(job: Job): boolean {\n  return job.status === \"approved\";\n}\n",
+    "src/main.tsx": "import { createRoot } from \"react-dom/client\";\nimport { App } from \"./App\";\nimport \"./styles/app.css\";\n\ncreateRoot(document.getElementById(\"root\")!).render(<App />);\n",
+    "src/styles/app.css": ":root {\n  color-scheme: dark;\n  --surface: #0b0c17;\n  --accent: #a78bfa;\n}\n\n.dashboard {\n  max-width: 72rem;\n  margin: 0 auto;\n  padding: 2rem;\n}\n\n.grid {\n  display: grid;\n  gap: 1rem;\n  grid-template-columns: repeat(auto-fill, minmax(16rem, 1fr));\n}\n",
+    "tests/approvals.test.ts": "import { describe, expect, it } from \"vitest\";\nimport { canRun, describeStatus, type Job } from \"../src/lib/approvals\";\n\nconst job = (status: Job[\"status\"]): Job => ({ id: \"job-1\", title: \"Refactor header\", status });\n\ndescribe(\"approvals\", () => {\n  it(\"only runs approved jobs\", () => {\n    expect(canRun(job(\"approved\"))).toBe(true);\n    expect(canRun(job(\"awaiting\"))).toBe(false);\n  });\n\n  it(\"describes a rejected job honestly\", () => {\n    expect(describeStatus(job(\"rejected\"))).toContain(\"nothing was executed\");\n  });\n});\n",
+    "tests/fixtures/jobs.json": "[\n  { \"id\": \"job-1\", \"title\": \"Refactor header\", \"status\": \"awaiting\" },\n  { \"id\": \"job-2\", \"title\": \"Add status tests\", \"status\": \"approved\" },\n  { \"id\": \"job-3\", \"title\": \"Rename theme tokens\", \"status\": \"rejected\" }\n]\n",
+    "tsconfig.json": "{\n  \"compilerOptions\": {\n    \"target\": \"ES2022\",\n    \"module\": \"ESNext\",\n    \"jsx\": \"react-jsx\",\n    \"strict\": true,\n    \"moduleResolution\": \"Bundler\"\n  },\n  \"include\": [\"src\", \"tests\"]\n}\n"
+  },
+  "uncommittedChanges": {
+    "src/lib/approvals.ts": {
+      "status": "M",
+      "workingTree": "export type JobStatus = \"awaiting\" | \"approved\" | \"rejected\" | \"expired\";\n\nexport interface Job {\n  id: string;\n  title: string;\n  status: JobStatus;\n  approvedAt?: number;\n}\n\n/** An approval is single-use and expires after five minutes. */\nexport const APPROVAL_TTL_MS = 5 * 60 * 1000;\n\nexport function describeStatus(job: Job): string {\n  switch (job.status) {\n    case \"awaiting\":\n      return \"Waiting for your approval\";\n    case \"approved\":\n      return \"Approved for one run\";\n    case \"rejected\":\n      return \"Rejected — nothing was executed\";\n    case \"expired\":\n      return \"Approval expired — approve again to run\";\n  }\n}\n\nexport function canRun(job: Job, now = Date.now()): boolean {\n  if (job.status !== \"approved\" || job.approvedAt === undefined) return false;\n  return now - job.approvedAt < APPROVAL_TTL_MS;\n}\n"
+    },
+    "tests/approvals.test.ts": {
+      "status": "M",
+      "workingTree": "import { describe, expect, it } from \"vitest\";\nimport { APPROVAL_TTL_MS, canRun, describeStatus, type Job } from \"../src/lib/approvals\";\n\nconst job = (status: Job[\"status\"], approvedAt?: number): Job => ({ id: \"job-1\", title: \"Refactor header\", status, approvedAt });\n\ndescribe(\"approvals\", () => {\n  it(\"only runs approved jobs\", () => {\n    expect(canRun(job(\"approved\", 0), 1_000)).toBe(true);\n    expect(canRun(job(\"awaiting\"), 1_000)).toBe(false);\n  });\n\n  it(\"expires an approval after the TTL\", () => {\n    expect(canRun(job(\"approved\", 0), APPROVAL_TTL_MS + 1)).toBe(false);\n  });\n\n  it(\"describes a rejected job honestly\", () => {\n    expect(describeStatus(job(\"rejected\"))).toContain(\"nothing was executed\");\n  });\n});\n"
+    },
+    "src/components/ApprovalTimer.tsx": {
+      "status": "??",
+      "workingTree": "import { APPROVAL_TTL_MS } from \"../lib/approvals\";\n\nexport function ApprovalTimer({ approvedAt, now }: { approvedAt: number; now: number }) {\n  const remaining = Math.max(0, APPROVAL_TTL_MS - (now - approvedAt));\n  return <span className=\"timer\">{Math.ceil(remaining / 1000)}s left</span>;\n}\n"
+    }
+  }
+}

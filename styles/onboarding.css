@@ -1,0 +1,497 @@
+/* styles/onboarding.css - Melly IDE onboarding and product previews */
+
+.onboarding-viewport {
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+  max-width: 100%;
+  min-width: 0;
+  min-height: 100%;
+  padding: 16px 20px 24px;
+  background: #000000;
+  color: #FFFFFF;
+  user-select: none;
+  overflow: hidden;
+}
+
+/* iOS Status Bar */
+.ios-status-bar {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 8px 12px;
+  font-size: 14px;
+  font-weight: 600;
+  letter-spacing: -0.2px;
+  color: #FFFFFF;
+}
+
+.status-notch {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.notch-island {
+  width: 90px;
+  height: 24px;
+  background: #000000;
+  border-radius: 20px;
+}
+
+.status-icons {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+}
+
+.status-battery {
+  display: flex;
+  align-items: center;
+  gap: 3px;
+  font-size: 12px;
+}
+
+/* Header Typography */
+.onboarding-header {
+  margin-top: 18px;
+  margin-bottom: 14px;
+  text-align: left;
+}
+
+.onboarding-title {
+  font-size: 32px;
+  font-weight: 700;
+  letter-spacing: -0.8px;
+  line-height: 1.15;
+  color: #FFFFFF;
+  margin-bottom: 8px;
+}
+
+.onboarding-subtitle {
+  font-size: 16px;
+  color: #8E8E93;
+  line-height: 1.35;
+  letter-spacing: -0.2px;
+}
+
+/* Dots Indicator */
+.onboarding-dots {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  margin-bottom: 20px;
+}
+
+.dot-btn {
+  width: 7px;
+  height: 7px;
+  border-radius: 999px;
+  background: #3A3A3C;
+  border: none;
+  cursor: pointer;
+  padding: 0;
+  transition: all 0.3s cubic-bezier(0.2, 0.9, 0.3, 1);
+}
+
+.dot-btn.active {
+  width: 24px;
+  background: var(--accent-blue);
+}
+
+/* Phone Mockup Frame */
+.phone-mockup-frame {
+  flex: 1;
+  min-width: 0;
+  background: #0B0B0E;
+  border: 1px solid rgba(255, 255, 255, 0.12);
+  border-radius: 36px;
+  padding: 16px 14px;
+  position: relative;
+  overflow: hidden;
+  box-shadow: 0 20px 40px rgba(0, 0, 0, 0.6), inset 0 0 0 1px rgba(255, 255, 255, 0.05);
+  margin-bottom: 24px;
+  min-height: 420px;
+}
+
+.phone-screen-inner {
+  height: 100%;
+  min-width: 0;
+  display: flex;
+  flex-direction: column;
+}
+
+/* Slide 1 Mockup - Code Card & Chat */
+.mockup-chat-screen {
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+  min-width: 0;
+  gap: 12px;
+  justify-content: space-between;
+}
+
+.mockup-code-card {
+  background: #15161A;
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  border-radius: 18px;
+  padding: 14px 16px;
+  position: relative;
+  min-width: 0;
+  overflow: hidden;
+}
+
+.code-lines-preview {
+  font-family: var(--font-mono);
+  font-size: 11.5px;
+  line-height: 1.5;
+  color: #E5E5EA;
+  overflow: hidden;
+}
+
+.code-keyword { color: #FF7B72; font-weight: 600; }
+.code-type { color: #79C0FF; }
+.code-comment { color: #8B949E; font-style: italic; }
+
+.mockup-expand-pill {
+  width: 100%;
+  margin-top: 12px;
+  background: rgba(255, 255, 255, 0.08);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  color: #FFFFFF;
+  font-size: 12px;
+  font-weight: 500;
+  padding: 8px 0;
+  border-radius: 10px;
+  cursor: pointer;
+  text-align: center;
+  transition: background 0.15s ease;
+}
+
+.mockup-expand-pill:hover {
+  background: rgba(255, 255, 255, 0.15);
+}
+
+.mockup-message-bubble {
+  background: transparent;
+  padding: 4px 6px;
+  font-size: 13.5px;
+  line-height: 1.45;
+  color: #E5E5EA;
+}
+
+.mockup-message-bubble strong {
+  color: #FFFFFF;
+  font-weight: 600;
+}
+
+.mockup-bubble-actions {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  margin-top: 8px;
+  color: #8E8E93;
+}
+
+.mockup-ai-chip {
+  font-size: 12px;
+  font-weight: 700;
+  background: rgba(255, 255, 255, 0.1);
+  padding: 2px 6px;
+  border-radius: 4px;
+}
+
+.mockup-input-bar {
+  display: flex;
+  align-items: center;
+  background: #1C1C1E;
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  border-radius: 26px;
+  padding: 6px 10px;
+  gap: 8px;
+}
+
+.mockup-btn-plus, .mockup-btn-mic, .mockup-btn-arrow {
+  background: rgba(255, 255, 255, 0.08);
+  border: none;
+  color: #8E8E93;
+  width: 32px;
+  height: 32px;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  font-size: 16px;
+}
+
+.mockup-btn-arrow {
+  background: rgba(255, 255, 255, 0.14);
+  color: #FFFFFF;
+}
+
+.mockup-input-field {
+  flex: 1;
+  font-size: 13px;
+  color: #8E8E93;
+}
+
+/* Slide 2 Mockup - Mobile Code Editor */
+.mockup-editor-screen {
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+}
+
+.mockup-editor-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 4px 6px 12px;
+}
+
+.mockup-close-x {
+  background: rgba(255, 255, 255, 0.1);
+  border: none;
+  color: #8E8E93;
+  width: 28px;
+  height: 28px;
+  border-radius: 50%;
+  cursor: pointer;
+}
+
+.mockup-filename {
+  font-weight: 600;
+  font-size: 14px;
+}
+
+.mockup-btn-save {
+  background: var(--accent-blue);
+  color: #FFFFFF;
+  border: none;
+  font-size: 12px;
+  font-weight: 600;
+  padding: 6px 14px;
+  border-radius: 16px;
+  cursor: pointer;
+}
+
+.mockup-callout-pill {
+  background: #2C2C2E;
+  border-radius: 10px;
+  display: inline-flex;
+  align-self: center;
+  align-items: center;
+  gap: 8px;
+  padding: 6px 14px;
+  font-size: 12px;
+  font-weight: 500;
+  color: #FFFFFF;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.5);
+  margin-bottom: 8px;
+}
+
+.mockup-callout-pill .bar {
+  color: rgba(255, 255, 255, 0.2);
+}
+
+.mockup-code-lines-scroll {
+  flex: 1;
+  font-family: var(--font-mono);
+  font-size: 12px;
+  line-height: 1.6;
+  background: #0B0B0E;
+  overflow-y: hidden;
+}
+
+.code-line {
+  display: flex;
+  white-space: pre;
+}
+
+.line-no {
+  width: 26px;
+  color: #A4A4AD;
+  text-align: right;
+  padding-right: 8px;
+  user-select: none;
+}
+
+.selected-block {
+  background: rgba(10, 132, 255, 0.3);
+  border-radius: 2px;
+}
+
+.mockup-keyboard-bar {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  background: #1C1C1E;
+  border-radius: 10px;
+  padding: 8px 10px;
+  margin-top: 10px;
+  color: #8E8E93;
+  font-size: 14px;
+  font-family: var(--font-mono);
+}
+
+/* Slide 3 & 4 Melly IDE previews */
+.mockup-melly-screen {
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+  justify-content: space-between;
+}
+
+.mockup-melly-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 4px 6px;
+}
+
+.melly-preview-brand {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  font-weight: 600;
+  font-size: 14px;
+}
+
+.melly-preview-logo {
+  width: 20px;
+  height: 20px;
+  display: grid;
+  place-items: center;
+  border-radius: 6px;
+  background: linear-gradient(145deg, #7C5CFC, #22C7A9);
+  color: #FFFFFF;
+  font-size: 12px;
+  font-weight: 800;
+}
+
+.rc-tools {
+  display: flex;
+  gap: 10px;
+  color: #8E8E93;
+  font-size: 13px;
+}
+
+.mockup-cards-list {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+  margin: 10px 0;
+}
+
+.mockup-rc-card {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  background: #16161A;
+  border: 1px solid rgba(255, 255, 255, 0.08);
+  border-radius: 12px;
+  padding: 10px 12px;
+}
+
+.mockup-rc-card.highlight-card {
+  border: 1px solid #FF6363;
+  box-shadow: 0 0 10px rgba(255, 99, 99, 0.2);
+}
+
+.rc-card-icon {
+  font-size: 16px;
+  width: 28px;
+  height: 28px;
+  background: rgba(255, 255, 255, 0.06);
+  border-radius: 8px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.rc-card-content strong {
+  display: block;
+  font-size: 12px;
+  color: #FFFFFF;
+}
+
+.rc-card-content p {
+  font-size: 10.5px;
+  color: #8E8E93;
+}
+
+.mockup-footer-pill {
+  align-self: center;
+  background: #1C1C1E;
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  padding: 4px 12px;
+  border-radius: 16px;
+  font-size: 12px;
+  color: #8E8E93;
+}
+
+/* Onboarding Bottom Actions */
+.onboarding-actions {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+
+.btn-continue {
+  width: 100%;
+  background: var(--accent-blue);
+  color: #FFFFFF;
+  border: none;
+  font-size: 16px;
+  font-weight: 600;
+  padding: 16px;
+  border-radius: 30px;
+  cursor: pointer;
+  transition: transform 0.1s ease, background 0.15s ease;
+  box-shadow: 0 4px 20px rgba(10, 132, 255, 0.35);
+}
+
+.btn-continue:active {
+  transform: scale(0.98);
+}
+
+.onboarding-legal {
+  text-align: center;
+  font-size: 12px;
+  color: #8E8E93;
+}
+
+.onboarding-legal a {
+  color: #FFFFFF;
+  text-decoration: underline;
+}
+
+.onboarding-dots { gap: 4px; }
+.dot-btn, .dot-btn.active { width: 44px; height: 44px; background: transparent; display: grid; place-items: center; }
+.dot-btn::after { content: ''; width: 8px; height: 8px; border-radius: 20px; background: #A4A4AD; }
+.dot-btn.active::after { width: 24px; background: #B8ADFF; }
+.mockup-expand-pill { min-height: 44px; }
+.mockup-btn-plus:disabled, .mockup-btn-mic:disabled, .mockup-btn-arrow:disabled,
+.mockup-close-x:disabled, .mockup-btn-save:disabled { cursor: default; opacity: 1; }
+
+.mockup-callout-pill .bar { color: #A4A4AD; }
+
+#problemReport {
+  width: min(36rem, calc(100% - 2rem));
+  max-height: calc(100% - 2rem);
+  color: #f1f2ff;
+  background: #151728;
+  border: 1px solid #8388a7;
+  border-radius: 12px;
+  padding: 1.25rem;
+}
+#problemReport::backdrop { background: rgb(0 0 0 / 65%); }
+#problemReport textarea {
+  display: block;
+  width: 100%;
+  box-sizing: border-box;
+  margin-block: .4rem 1rem;
+  color: inherit;
+  background: #0b0d16;
+}

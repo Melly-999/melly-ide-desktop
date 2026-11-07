@@ -1,0 +1,48 @@
+# Media sources and reproduction
+
+**The native captures and brand compositions below are withheld from the public source** until their media rights are confirmed. This page keeps their provenance. Two capture classes existed in `docs/assets/showcase/`. They must never be confused.
+
+| Class | Location | Source | Used by README |
+|---|---|---|---|
+| **Native Windows** (MEGA-SHOWCASE-02, 2026-11-03) | `native/` (withheld) | Real Tauri 2 / WebView2 app, genuine Rust IPC, synthetic disk repository | Withheld from public source |
+| Browser with MOCK native bridge (MEGA-SHOWCASE-01, 2026-11-02) | Historical showcase evidence | Actual frontend in Chromium with an in-memory `__TAURI__` MOCK and a visible provenance strip | No, superseded |
+| Brand compositions | `brand/` | Original local SVG layouts embedding the existing approved icon | Withheld from public source |
+
+## Native Windows media
+
+Build identity, isolation, capture method and caveats: [Native capture](NATIVE-CAPTURE.md). Hashes of the executable and every served frontend asset: [NATIVE-SOURCE-FINGERPRINT.json](NATIVE-SOURCE-FINGERPRINT.json). The opened repository: [orbit-dashboard-fixture.json](orbit-dashboard-fixture.json).
+
+| Asset | Scene |
+|---|---|
+| `native-workspace-overview.png` (withheld) | Explorer expanded, three tabs, `approvals.ts` saved on disk (README hero) |
+| `native-editor-tabs.png` (withheld) | Explorer hidden with Ctrl+B, three tabs, test file |
+| `native-command-palette.png` (withheld) | Command palette filtered to "go to" |
+| `native-quick-open.png` (withheld) | Go to File for "appr", 13 files indexed, `.git` skipped |
+| `native-find-in-files.png` (withheld) | Find in Files for `APPROVAL_TTL_MS`: 6 matches, 3 files, 23 ms |
+| `native-git-diff.png` (withheld) | Read-only Git: 2 modified + 1 untracked, side-by-side diff |
+| `native-agent-control-center.png` (withheld) | Execution disabled, disclosures, read-only plan job form |
+| `native-workspace-flow.gif` (withheld) | Explorer → component → `approvals.ts` → tab switching |
+| `native-navigation-flow.gif` (withheld) | Palette → Go to File → Find in Files → source line |
+| `native-git-review.gif` (withheld) | Dev Center → Git → diff → side-by-side → hunk → filter |
+
+Every screenshot and every decoded GIF frame was reviewed visually and scanned with the built-in Windows OCR engine for local paths, account names and e-mail addresses. PNGs were re-encoded without ancillary metadata. The Agent Control Center composition deliberately starts below the CLI detection cards, because those cards print absolute local paths. The writable "Edit files in this folder" profile is present in the job form's native option list as "disabled until the writable-agent contract is accepted"; open option lists are not captured.
+
+## Superseded browser media
+
+The SHOWCASE-01 files in `screenshots/` and `demos/` were rendered from the actual frontend in Chromium with a capture-only MOCK native bridge and a visible **BROWSER DEMO / SYNTHETIC PROJECT / NATIVE BRIDGE MOCK** strip. They prove rendering and interaction over mocked data, not native filesystem, Git, IPC or provider behavior. Their fixture is [synthetic-fixture.json](synthetic-fixture.json) and their served-file hashes are in [SOURCE-FINGERPRINT.json](SOURCE-FINGERPRINT.json). The historical captures are preserved with SHOWCASE-01 evidence outside this source tree.
+
+## Brand sources
+
+The approved orbital icon (Orbit) is AI-assisted owner branding described in [Licensing scope](../product/LICENSING.md#name-and-logo). It is reused from `images/melly-512.png` and derived to a documentation-only icon PNG. It is not regenerated, remasked or installed. Hero and wordmark layouts are original local SVG compositions in midnight, indigo and violet with system typography. PNGs were rasterized locally. No external media service was called.
+
+[Hermes Agent](https://github.com/NousResearch/hermes-agent) was read solely as a repository information-architecture benchmark. No logo, copy, artwork, screenshot or media was copied.
+
+## Historical evidence
+
+The older `docs/assets/screenshots/` directory and its provenance are preserved unchanged. Historical MEGA-09 native QA ran the same executable with synthetic CLI jobs and recorded 26 passing scenarios. SHOWCASE-02 did not rerun that suite; its native session opened a folder, navigated, searched and inspected Git with execution disabled.
+
+## Reproduce safely
+
+The fixtures are self-contained. The capture harness stays in the external MEGA-SHOWCASE-02 evidence package because it references this machine's reviewed executable, Playwright installation and evidence paths. To reproduce: use a separate application identifier or a disposable Windows account, an empty WebView2 user-data folder, the exact synthetic repository and a folder-dialog guard that refuses every other path. Review every output frame before publication. Never select an owner folder or copy a private profile.
+
+The candidate is local and unpublished; owner review is required before sharing.

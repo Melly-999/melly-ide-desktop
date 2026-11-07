@@ -1,0 +1,11 @@
+# Automatically generated - DO NOT EDIT!
+
+[[permission]]
+identifier = "allow-folder-recent"
+description = "Enables the folder_recent command without any pre-configured scope."
+commands.allow = ["folder_recent"]
+
+[[permission]]
+identifier = "deny-folder-recent"
+description = "Denies the folder_recent command without any pre-configured scope."
+commands.deny = ["folder_recent"]

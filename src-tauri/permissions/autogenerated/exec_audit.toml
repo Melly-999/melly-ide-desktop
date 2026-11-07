@@ -1,0 +1,11 @@
+# Automatically generated - DO NOT EDIT!
+
+[[permission]]
+identifier = "allow-exec-audit"
+description = "Enables the exec_audit command without any pre-configured scope."
+commands.allow = ["exec_audit"]
+
+[[permission]]
+identifier = "deny-exec-audit"
+description = "Denies the exec_audit command without any pre-configured scope."
+commands.deny = ["exec_audit"]

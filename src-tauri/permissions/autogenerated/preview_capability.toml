@@ -1,0 +1,11 @@
+# Automatically generated - DO NOT EDIT!
+
+[[permission]]
+identifier = "allow-preview-capability"
+description = "Enables the preview_capability command without any pre-configured scope."
+commands.allow = ["preview_capability"]
+
+[[permission]]
+identifier = "deny-preview-capability"
+description = "Denies the preview_capability command without any pre-configured scope."
+commands.deny = ["preview_capability"]

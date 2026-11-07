@@ -1,0 +1,11 @@
+# Automatically generated - DO NOT EDIT!
+
+[[permission]]
+identifier = "allow-exec-cancel"
+description = "Enables the exec_cancel command without any pre-configured scope."
+commands.allow = ["exec_cancel"]
+
+[[permission]]
+identifier = "deny-exec-cancel"
+description = "Denies the exec_cancel command without any pre-configured scope."
+commands.deny = ["exec_cancel"]

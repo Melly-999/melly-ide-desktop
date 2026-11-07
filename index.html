@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
+  <meta name="apple-mobile-web-app-capable" content="yes">
+  <meta name="apple-mobile-web-app-status-bar-style" content="default">
+  <meta name="theme-color" content="#0b0d16">
+  <title>Melly IDE — Review before you apply</title>
+  <link rel="icon" type="image/png" href="images/melly-48.png">
+  <link rel="apple-touch-icon" href="images/melly-180.png">
+  <link rel="stylesheet" href="styles/main.css">
+  <link rel="stylesheet" href="styles/onboarding.css">
+  <link rel="stylesheet" href="styles/hub.css">
+  <link rel="stylesheet" href="styles/editor.css">
+  <link rel="stylesheet" href="styles/workspace.css">
+  <link rel="stylesheet" href="styles/local-folder.css">
+  <link rel="stylesheet" href="styles/premium.css">
+  <link rel="stylesheet" href="styles/ux02.css">
+  <link rel="stylesheet" href="styles/auth.css">
+  <link rel="manifest" href="manifest.webmanifest">
+  <link rel="stylesheet" href="styles/ai01.css">
+  <link rel="stylesheet" href="styles/devcenter.css">
+  <link rel="stylesheet" href="styles/mega09.css">
+</head>
+<body>
+  <!-- Top App Navigation / Switcher Bar -->
+  <header class="app-master-header">
+    <div class="brand-badge">
+      <img class="brand-logo-icon" src="images/melly-192.png" alt="" width="36" height="36">
+      <span>Melly IDE</span>
+    </div>
+
+
+
+    <div class="header-controls">
+      <button class="btn-ctrl-chip" data-config="account" aria-label="Sign in or view account">Sign in</button>
+      <details id="moreMenu"><summary aria-label="Help and local tools">•••</summary><div class="more-menu">
+        <button class="app-nav-btn" data-view="onboarding">Help</button>
+        <button class="app-nav-btn" id="openProblemReport" type="button" lang="en">Report a problem</button>
+        <button class="app-nav-btn" data-view="hub">Local tools &amp; backup</button>
+        <button class="app-nav-btn" data-view="studio">Demo workbench · simulated</button>
+      <button class="btn-ctrl-chip" id="toggleDeviceFrame" title="Toggle application preview frame" aria-label="Application preview frame" aria-pressed="false">Phone frame: off</button>
+      </div></details>
+      <button class="btn-ctrl-chip" id="toggleLanguage" title="Interface controls language; feature descriptions remain English" aria-label="Switch interface controls to Polish; feature descriptions remain English">EN</button>
+    </div>
+  </header>
+
+  <div class="offline-shell-status" id="offlineShellStatus" role="status" aria-live="polite" lang="en" data-state="preparing" data-ready="false">Application shell: Preparing offline access. File saves are separate.</div>
+
+  <dialog id="problemReport" lang="en" aria-labelledby="problemReportTitle" aria-describedby="problemReportReview">
+    <form method="dialog">
+      <h2 id="problemReportTitle">Report a problem</h2>
+      <p id="problemReportReview">Copy the template and fill it in. Review it for private information before sharing it with the maintainer. Melly IDE collects no attachments for this report and sends nothing.</p>
+      <label for="problemReportTemplate">Report template</label>
+      <textarea id="problemReportTemplate" rows="8" readonly></textarea>
+      <button class="quiet-button" autofocus>Close</button>
+    </form>
+  </dialog>
+
+  <!-- Main Viewport Shell -->
+  <main class="app-wrapper" id="appWrapper">
+    <!-- View 1: Onboarding Carousel ("It Codes, You Check" & "Start in 10 Seconds") -->
+    <section class="view-screen active-view" id="viewOnboarding">
+      <div id="onboardingContainer" lang="en"></div>
+    </section>
+
+    <!-- View 2: Melly IDE workspace -->
+    <section class="view-screen" id="viewHub" style="display: none;">
+      <div id="hubContainer" lang="en"></div>
+    </section>
+
+    <!-- View 3: Editor + simulated agent review -->
+    <section class="view-screen" id="viewStudio" style="display: none;">
+      <div class="studio-grid-layout">
+        <!-- Interactive Mobile Code Editor -->
+        <div id="editorContainer" lang="en"></div>
+        <!-- Interactive AI Agent Chat -->
+        <div id="chatContainer" lang="en"></div>
+      </div>
+    </section>
+  </main>
+
+  <script type="module" src="js/app.js"></script>
+</body>
+</html>

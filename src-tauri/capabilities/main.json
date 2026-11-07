@@ -1,0 +1,15 @@
+{
+  "identifier": "main",
+  "description": "Main local window: user-selected folder previews and explicit save, read-only Git inspection, isolated Live Preview window control, terminal capability status and MEGA-08 natively approved one-shot command/agent execution. Applies to the main window only; the preview window has no capability.",
+  "windows": [
+    "main"
+  ],
+  "permissions": [
+    "allow-local-folder-preview",
+    "allow-local-folder-save",
+    "allow-mega09-workspace",
+    "allow-mega04-devcenter",
+    "allow-mega07-diagnostics",
+    "allow-mega08-execution"
+  ]
+}

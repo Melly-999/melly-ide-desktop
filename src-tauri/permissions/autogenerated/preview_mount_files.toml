@@ -1,0 +1,11 @@
+# Automatically generated - DO NOT EDIT!
+
+[[permission]]
+identifier = "allow-preview-mount-files"
+description = "Enables the preview_mount_files command without any pre-configured scope."
+commands.allow = ["preview_mount_files"]
+
+[[permission]]
+identifier = "deny-preview-mount-files"
+description = "Denies the preview_mount_files command without any pre-configured scope."
+commands.deny = ["preview_mount_files"]

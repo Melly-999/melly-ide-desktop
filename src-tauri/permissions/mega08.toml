@@ -1,0 +1,4 @@
+[[permission]]
+identifier = "allow-mega08-execution"
+description = "MEGA-08 approved execution for the main window only: capability status, session enable (native dialog) and disable, per-run native approval of one executable + argument array, start bound to a single-use approval token, bounded output polling, cancellation of Melly's own runs, in-memory audit, restart reconciliation, Claude Code / Codex CLI detection and fixed version/help probes, and read-only per-file Git diff counts. No shell, no interactive terminal, no elevation, no arbitrary process control, no Git mutation. The preview window and project content receive no capability."
+commands.allow = ["exec_capability", "exec_enable", "exec_disable", "exec_set_concurrency", "exec_request", "exec_start", "exec_poll", "exec_cancel", "exec_runs", "exec_audit", "exec_reconcile", "agent_detect", "agent_probe", "git_diff_summary"]

@@ -1,0 +1,11 @@
+# Automatically generated - DO NOT EDIT!
+
+[[permission]]
+identifier = "allow-exec-capability"
+description = "Enables the exec_capability command without any pre-configured scope."
+commands.allow = ["exec_capability"]
+
+[[permission]]
+identifier = "deny-exec-capability"
+description = "Denies the exec_capability command without any pre-configured scope."
+commands.deny = ["exec_capability"]

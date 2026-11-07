@@ -1,0 +1,32 @@
+/* Fixed viewport header keeps scrolled content below real iOS system chrome. */
+:root { --melly-safe-top:env(safe-area-inset-top,0px); --melly-safe-bottom:env(safe-area-inset-bottom,0px); --app-header-height:calc(64px + var(--melly-safe-top)); }
+html { background:#0b0d16; overflow-x:hidden; scroll-padding-top:calc(var(--app-header-height) + 16px); }
+body { overflow:visible; padding-top:var(--app-header-height); min-height:100dvh; }
+.app-master-header { position:fixed; top:0; left:0; right:0; z-index:200; padding-top:calc(8px + var(--melly-safe-top)); background:#0b0d16; backdrop-filter:none; -webkit-backdrop-filter:none; isolation:isolate; transform:none; }
+.primary-navigation { padding-bottom:max(6px,var(--melly-safe-bottom)); }
+.app-wrapper { padding-bottom:calc(100px + var(--melly-safe-bottom)); }
+.account-page { max-width:760px; }
+.account-heading { display:flex; justify-content:space-between; align-items:flex-start; gap:16px; margin-bottom:20px; }
+.account-heading>div { min-width:0; }
+.account-heading>button { flex-shrink:0; }
+.account-summary { padding:20px; }
+.account-summary>p { margin:12px 0; }
+.account-blocked { color:#e4c2ff!important; border-left:3px solid #b894ee; padding:8px 12px; font-size:12px!important; background:#282035; }
+.account-name { font-weight:600; overflow-wrap:anywhere; }
+.account-facts { margin:20px 0; }
+.account-facts>div { display:flex; justify-content:space-between; gap:16px; padding:12px 0; border-top:1px solid #393046; font-size:13px; }
+.account-facts dt { color:#bbb0ca; }
+.account-facts dd { text-align:right; }
+.account-actions { display:flex; flex-wrap:wrap; gap:9px; margin-top:18px; }
+.account-auth-panel { margin:18px 0; padding:10px 0; max-width:100%; }
+.account-auth-panel>p { margin-bottom:12px; }
+#clerkAuthHost { min-height:100px; max-width:100%; overflow-wrap:anywhere; }
+#clerkAuthHost .cl-rootBox,#clerkAuthHost .cl-cardBox,#clerkAuthHost .cl-card { max-width:100%; }
+.account-privacy { margin-top:16px; }
+.account-privacy p { margin:10px 0; }
+.account-page :focus-visible { outline:3px solid #d5b9ff; outline-offset:3px; }
+@media(max-width:700px) { .account-heading { flex-direction:column; gap:10px; } .account-summary { padding:16px; } .account-facts>div { font-size:12px; } }
+@media(orientation:landscape) and (max-height:500px) { .app-master-header { position:fixed; } }
+
+.account-facts dd { min-width:0; overflow-wrap:anywhere; }
+#accountIdentityReference { font-size:11px; }

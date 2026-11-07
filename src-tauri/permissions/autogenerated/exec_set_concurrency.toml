@@ -1,0 +1,11 @@
+# Automatically generated - DO NOT EDIT!
+
+[[permission]]
+identifier = "allow-exec-set-concurrency"
+description = "Enables the exec_set_concurrency command without any pre-configured scope."
+commands.allow = ["exec_set_concurrency"]
+
+[[permission]]
+identifier = "deny-exec-set-concurrency"
+description = "Denies the exec_set_concurrency command without any pre-configured scope."
+commands.deny = ["exec_set_concurrency"]

@@ -1,0 +1,413 @@
+{
+  "captureDate": "2026-11-03",
+  "timeZone": "Europe/Warsaw",
+  "sourceTree": {
+    "repository": "Melly IDE development checkout (local working tree, uncommitted)",
+    "branch": "t0-safety-baseline",
+    "head": "678f6a55c32791fea92958d27e72ca2cbdb93901",
+    "note": "HEAD alone does not identify the dirty tree; the hashes below do."
+  },
+  "executable": {
+    "origin": "MEGA-08.2/09 debug build (cargo build --offline) kept in the owner evidence folder mega08/target/debug/; the same file MEGA-09 native QA ran",
+    "sha256": "ae0c7b51958e664015818f6f9cbf4591cbd3cdcec3c6e76affeebbd91dc6abe1",
+    "bytes": 17069056,
+    "builtAt": "2026-10-29T15:53:48+01:00",
+    "mega09InputsSha256Match": true,
+    "nativeInputsChecked": 62,
+    "nativeInputsNewerThanBuild": 0,
+    "freshBuildAttempt": "BLOCKED: MSVC link.exe not installed (Visual Studio folders empty); no tools installed"
+  },
+  "runCopy": {
+    "sha256": "8f76e64b98db6625c3307664bc4cb2d0309b9be65f7307316bb83da6ec5e37a2",
+    "patch": {
+      "offset": 12900260,
+      "from": "com.melly.ide.mega05.qa",
+      "to": "com.melly.ide.shwc02.qa",
+      "differingBytes": 5
+    },
+    "reason": "Profile isolation only: the identifier selects the app-local data folder, so the owner QA profile was never written. No other byte differs."
+  },
+  "frontend": {
+    "allowlistedAssets": 71,
+    "aggregateSha256": "71cc448139320bc560478e7b929f47fae6c02b02251044a79af5f0924aa8274b",
+    "servedByteIdentical": 70,
+    "differences": [
+      {
+        "asset": "index.html",
+        "explanation": "Tauri HTML re-serialization: line breaks around <!doctype>/<html>/<head> and </body></html> only; no content change"
+      }
+    ],
+    "files": [
+      {
+        "asset": "js/workspace/picker.js",
+        "size": 7819,
+        "sha256": "d3cccfc17086ccae5c91477717368e78f206ef7fd8098aaa70bcec59680cbb3b"
+      },
+      {
+        "asset": "js/workspace/commands.js",
+        "size": 26136,
+        "sha256": "3008d407e0136f3a00e6eb885e5209b16db6217eb46f0a7eaf78b8a72ab5b45a"
+      },
+      {
+        "asset": "styles/mega09.css",
+        "size": 10028,
+        "sha256": "52c2b823f2166c6932417e805573f4183490e91d98ffebdcc0305808eb326f46"
+      },
+      {
+        "asset": "js/local-folder.js",
+        "size": 50809,
+        "sha256": "ecd72ba379145c056319ae012cde5b698e1798f146395fd264c7e8a3382907ed"
+      },
+      {
+        "asset": "styles/local-folder.css",
+        "size": 3910,
+        "sha256": "b13973dd81c812c151db8b9db1cc55733cf6ec942636931eda94515eef69316a"
+      },
+      {
+        "asset": "js/storage/disk-recovery.js",
+        "size": 6076,
+        "sha256": "10ab140d064db54d206fe4c7c0bb5c67ba53f51309406263bf6a4679271e4dca"
+      },
+      {
+        "asset": "js/diagnostics.js",
+        "size": 5291,
+        "sha256": "be8c90eecfb5fc236262caa76a18cade82b550fe628a2ceed0660694c3af22c8"
+      },
+      {
+        "asset": "js/devcenter/ui.js",
+        "size": 86835,
+        "sha256": "4e36b7c9da3255821b33ed0265be492b29175fe2f9f8966b562e08c54e870e29"
+      },
+      {
+        "asset": "js/devcenter/preview.js",
+        "size": 5433,
+        "sha256": "ae08133792e8794b8a083592ff196287879fd7be3bc62a1c976fcf051cb46d54"
+      },
+      {
+        "asset": "js/devcenter/git.js",
+        "size": 2555,
+        "sha256": "efa610ba75aaf5cf6479e59402484aef00b17858a0087f58f3022117a1e56bcb"
+      },
+      {
+        "asset": "js/devcenter/terminal.js",
+        "size": 3841,
+        "sha256": "c8c31ddbcc91c1f7ea5592212c7546b64e6af67d228157ed6fe5fb6231616258"
+      },
+      {
+        "asset": "js/devcenter/broker.js",
+        "size": 3480,
+        "sha256": "6f0c794c3ea4090fcc9ec2f1414a3639054ed500cdc98ab69ba4275727b2e347"
+      },
+      {
+        "asset": "js/devcenter/runner.js",
+        "size": 10326,
+        "sha256": "2fcbb2c5c177c9a313706fbb556883f9653457bed89a9f416a8c97c64c69fd2f"
+      },
+      {
+        "asset": "js/devcenter/jobs.js",
+        "size": 25811,
+        "sha256": "21354845bcc5335d704c9cafe6c3fb8e3a68b404e4b59f3ee3eb6e6591a735ee"
+      },
+      {
+        "asset": "js/devcenter/adapters.js",
+        "size": 7603,
+        "sha256": "39e1aa5ea1e1120ba917aae90c8c52df9c9de7a64f95e22e1c0fb35b6df60e9f"
+      },
+      {
+        "asset": "styles/devcenter.css",
+        "size": 7610,
+        "sha256": "e854d9fe3af6dd7a56407f5ccb4d0988eccd8c8713cbfb737aaa5806c75b76e0"
+      },
+      {
+        "asset": "js/ai/contracts.js",
+        "size": 4724,
+        "sha256": "1ef1ed2714cd8d67c92ccc92e95757450835aa1f1d9cafef35942ea96aacc899"
+      },
+      {
+        "asset": "js/ai/controller.js",
+        "size": 8113,
+        "sha256": "8bd86424d4e5715bc19fa5b25c9a9af959228242c12b3a31d2765da1a8763d77"
+      },
+      {
+        "asset": "js/ai/panel.js",
+        "size": 9285,
+        "sha256": "b7b362241e7cfe77a0509962cdb801b18a66a804087ad4018854864c11dbf33b"
+      },
+      {
+        "asset": "styles/ai01.css",
+        "size": 2116,
+        "sha256": "7dbcf28ffc1749ccb31382d6429defb8ceb8718c9c4433092e509a8d4ee91956"
+      },
+      {
+        "asset": "js/auth/session.js",
+        "size": 8361,
+        "sha256": "4d78a1d873a0097d5ca0dfca5f79576a2eb4f73fca697cc3d96f807cbe02ffec"
+      },
+      {
+        "asset": "js/auth/config.js",
+        "size": 2252,
+        "sha256": "9c2a576faaa5e12e65baec8e7ecd3864790284579ae11d4424bfe65356e2852a"
+      },
+      {
+        "asset": "js/auth/public-config.js",
+        "size": 224,
+        "sha256": "cb38e323f19586733a09750087cdeb503cb31011eba5a515828f42a91192794c"
+      },
+      {
+        "asset": "js/auth/provider.js",
+        "size": 1986,
+        "sha256": "87409501b54b71fdf0c532a1878cbb1ea81d83430ffd07b4f89c3d7e6b6f438c"
+      },
+      {
+        "asset": "js/auth/account.js",
+        "size": 8882,
+        "sha256": "1a0e96f756a4cf93a714fd95a1eccd0f7df0186d7b5aadd66522db4f9ae8c742"
+      },
+      {
+        "asset": "styles/auth.css",
+        "size": 2456,
+        "sha256": "086610e10280e316cceb4b1980c1b217061bd7902c0ae33ef838dd3ae659ca47"
+      },
+      {
+        "asset": "js/dashboard.js",
+        "size": 25225,
+        "sha256": "115705118e36c42d5fd0bd6489f7d99791c695f2e0c84940d47a387a1e1d01ed"
+      },
+      {
+        "asset": "js/assistant.js",
+        "size": 4111,
+        "sha256": "2fb3a8a91a34b2efc35c83a05c537660e0ff7be30a8c70df12a7601d95d60a5b"
+      },
+      {
+        "asset": "styles/premium.css",
+        "size": 10389,
+        "sha256": "1aa97f36d4d90107811279d9b1c11a9e0accff63926da801fd8604d1a8646e7d"
+      },
+      {
+        "asset": "styles/ux02.css",
+        "size": 12948,
+        "sha256": "32484a8d548ccb651fbc926ac775efe066002a5f98cb2b2c22a57eba10531286"
+      },
+      {
+        "asset": "images/melly-48.png",
+        "size": 4377,
+        "sha256": "747342c60b7a3ce1d22e11fad5bafda27fe051b15b2a972300ec3881b6b47f39"
+      },
+      {
+        "asset": "images/melly-180.png",
+        "size": 48739,
+        "sha256": "2389b3b47458013d4841f868708b5f0fff9bcfa58c890e8ed72692f9298f8928"
+      },
+      {
+        "asset": "index.html",
+        "size": 3575,
+        "sha256": "b56a16c6cbdc4a77be85d25ef3ee105e9867aca25a9d4c49a913bfdad0fd9bcb"
+      },
+      {
+        "asset": "manifest.webmanifest",
+        "size": 464,
+        "sha256": "6c5d4c6f5b481f0efb075c5cb45f9ad244e71d3b126fee0d2f61c837607a957a"
+      },
+      {
+        "asset": "images/melly-192.png",
+        "size": 54763,
+        "sha256": "95c0205283de8a7c6679636b77664138a9a6c38983a9e2b038b422c7dbc1e0fc"
+      },
+      {
+        "asset": "images/melly-512.png",
+        "size": 381083,
+        "sha256": "ec7288843c80e54725b41717c39997a62120fc901d1fdcb37f325fcd1365d1e3"
+      },
+      {
+        "asset": "styles/workspace.css",
+        "size": 2511,
+        "sha256": "fefe1c73aacb667cbd6cfe87d0931312038817a09c54ed4dc607576092acfa36"
+      },
+      {
+        "asset": "js/workspace/model.js",
+        "size": 9808,
+        "sha256": "b691ea9f3e0e3cf197c02db01b5af7ab4ae977424acd0eb0cebb524e2b80a2d1"
+      },
+      {
+        "asset": "js/workspace/store.js",
+        "size": 2371,
+        "sha256": "0206b9ed83891d9414ab92ab3231c7801d38e78998f07be605d94771a0778f9e"
+      },
+      {
+        "asset": "js/workspace/github.js",
+        "size": 3539,
+        "sha256": "0af9b3e770b5886e6b26eb24b473a247d46e528cf07e2cb014a239b76d062b01"
+      },
+      {
+        "asset": "js/workspace/ui.js",
+        "size": 22148,
+        "sha256": "1da09421a138f2d79f92c0a7e4425dae232862f816fe38a7821b7f24ed084467"
+      },
+      {
+        "asset": "js/workspace/backup-v3.js",
+        "size": 9415,
+        "sha256": "7bcccffbcdf0a89878b9d67f3de1572f3ba7ffa348a0ca4051c062830dc65c89"
+      },
+      {
+        "asset": "styles/main.css",
+        "size": 6636,
+        "sha256": "e95537def2b980c0f5c9f6a5ed22dcc9a4012c8f2512de3b2043ac0f48dc3ed3"
+      },
+      {
+        "asset": "styles/onboarding.css",
+        "size": 9278,
+        "sha256": "e2eaa11ec7876246a394bb66d6f023597286ddd79ed43ca9181ea8dcc10500e3"
+      },
+      {
+        "asset": "styles/hub.css",
+        "size": 13428,
+        "sha256": "8394560c1645c46638d02d14742c5c053579a9d12a58c984e92b80d90ffbb5ab"
+      },
+      {
+        "asset": "styles/editor.css",
+        "size": 16541,
+        "sha256": "d35a5d5da6c1280e21e39a5f13ae027fd572069738a680216526bac56f0a5564"
+      },
+      {
+        "asset": "js/app.js",
+        "size": 8638,
+        "sha256": "3e9e3a12daf6c307a80c9a3ec8f6b9a64e987001329fc4c16e01300adb83ccff"
+      },
+      {
+        "asset": "js/onboarding.js",
+        "size": 3297,
+        "sha256": "a91abf5846f1524aa8b3ed99f8a2ac863316b9f54e8bfe3d18025a14117a4aac"
+      },
+      {
+        "asset": "js/hub.js",
+        "size": 29162,
+        "sha256": "50fcee5cf6aabf791d9ead7409cc60efd9336bf346cbe625feb0f5ad3101b5af"
+      },
+      {
+        "asset": "js/editor.js",
+        "size": 34020,
+        "sha256": "1a2538af3158e9b697059c32749496fba73f9dfda720ab148c002bd599b885f2"
+      },
+      {
+        "asset": "js/chat.js",
+        "size": 22390,
+        "sha256": "c2597e4dafe10a1cab3f07a6d10b9aca445c848d0f6dcde5f5815bf48748dd20"
+      },
+      {
+        "asset": "js/dialog.js",
+        "size": 2269,
+        "sha256": "ba83a3fed91409872c22d246642a1f1a5db7317da704fb1bf690ee471ff2fa2a"
+      },
+      {
+        "asset": "js/ui-language.js",
+        "size": 4336,
+        "sha256": "b212e5c44f03e6c8ca6dc58bcafdd78d1d27a48b72a51be4f0d311d523486dfc"
+      },
+      {
+        "asset": "js/data/samples.js",
+        "size": 7867,
+        "sha256": "ee1953d03c57c3c9971eaa19536360b1a21ffc006a3c82b1f63f2bcda3e6cc19"
+      },
+      {
+        "asset": "js/storage/file-store.js",
+        "size": 9892,
+        "sha256": "73c0be5480af513ae29b4fd377fb168a1cfa595448ead3b5453a449f92e74016"
+      },
+      {
+        "asset": "js/storage/durability.js",
+        "size": 5728,
+        "sha256": "dc46074f0787ca4085271633342f16ee53e25f617e8e4667e704b6bf3e210554"
+      },
+      {
+        "asset": "js/modules/skills.js",
+        "size": 2151,
+        "sha256": "8fc724be1338d7ec3f89f7b9fd227ad8705f8a523dbd1b1e9b3b9e4af2474f96"
+      },
+      {
+        "asset": "js/modules/projects.js",
+        "size": 1511,
+        "sha256": "ec44a953bd768c1cc4e1db354d267cb74089b5ca4d8a872f9dc229fa58858902"
+      },
+      {
+        "asset": "js/modules/agents.js",
+        "size": 1570,
+        "sha256": "43ff415472ea8dea9b9b1f54cab13903b211aa695e2ac08d6a0f252218c5bebd"
+      },
+      {
+        "asset": "js/modules/commands.js",
+        "size": 1427,
+        "sha256": "1e61ad8de0fa1590a2449d3f0b0e5b36008cdfd417265b018cb67ab639221bc8"
+      },
+      {
+        "asset": "js/modules/automations.js",
+        "size": 2581,
+        "sha256": "90761a55221b2922d1615ce553f65cfd7c0588c1d91307a98f82923f46dc92ab"
+      },
+      {
+        "asset": "js/modules/mcp.js",
+        "size": 2165,
+        "sha256": "69acf021ce0b0328f5a324146890175723e9986685ddc13614f35f2ac1f44a90"
+      },
+      {
+        "asset": "js/modules/screen-awareness.js",
+        "size": 881,
+        "sha256": "ddc944586b0e6fbfea406ea3b855c19ce343d24e22b70b69a9962159fc6aff5c"
+      },
+      {
+        "asset": "js/modules/simulation.js",
+        "size": 2448,
+        "sha256": "47da7dcaa2cb8aa51deca6dd702635b2f2c38905ffd1c6d90c18f28a21cadb35"
+      },
+      {
+        "asset": "js/backup.js",
+        "size": 6361,
+        "sha256": "4b75f08cedf131cd16de901cbd43cf9a512346ab74612bdbf456ff29a42ff8e5"
+      },
+      {
+        "asset": "js/backup-ui.js",
+        "size": 6960,
+        "sha256": "fd6db619b27edf637dd965c949bcd98085bd27a9da9bc54045d037dfefc8845c"
+      },
+      {
+        "asset": "js/offline.js",
+        "size": 6522,
+        "sha256": "1eef5937606092fb9e18612f38d26e928e413e3dcc055664fed314a70dff2805"
+      },
+      {
+        "asset": "js/offline-shell.js",
+        "size": 4057,
+        "sha256": "845dc082246f88529d3393cece5d8247969f6c54d1f33ded3144925f39209b20"
+      },
+      {
+        "asset": "runtime/auth-sdk.js",
+        "size": 1636607,
+        "sha256": "9c3caaa8313b165db4b451506b284b05f294b5ec7fe23fc36961167c0e4f0edc"
+      },
+      {
+        "asset": "runtime/auth-sdk.js.LEGAL.txt",
+        "size": 12540,
+        "sha256": "8842e9482053e953c213f8fa8c4404395e276d42246e9528a097d98cba21d65f"
+      },
+      {
+        "asset": "sw.js",
+        "size": 3120,
+        "sha256": "a64801aac28d29ebf36d037a87d7794513b22b0fc6661c5a7861efc9abf14599"
+      }
+    ]
+  },
+  "runtime": {
+    "webview2": "Edg/156.0.4314.58",
+    "origin": "http://tauri.localhost",
+    "tauriInternals": true,
+    "mockMarkers": [],
+    "windowTitle": "Melly IDE — MEGA-07 QA (configured title in tauri.conf.json; not updated after MEGA-07)",
+    "execCapability": {
+      "enabled": false,
+      "mode": "approved-one-shot",
+      "interactiveShell": false,
+      "containment": "Windows Job Object (process-tree cleanup, max 64 processes). Not a sandbox."
+    },
+    "webviewProfile": "fresh, redirected with WEBVIEW2_USER_DATA_FOLDER into the external evidence folder",
+    "devtools": "loopback-only remote debugging port used by the capture harness for page-targeted input; QA session only, not shipped configuration"
+  }
+}

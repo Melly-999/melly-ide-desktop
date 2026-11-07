@@ -1,0 +1,11 @@
+# Automatically generated - DO NOT EDIT!
+
+[[permission]]
+identifier = "allow-exec-enable"
+description = "Enables the exec_enable command without any pre-configured scope."
+commands.allow = ["exec_enable"]
+
+[[permission]]
+identifier = "deny-exec-enable"
+description = "Denies the exec_enable command without any pre-configured scope."
+commands.deny = ["exec_enable"]

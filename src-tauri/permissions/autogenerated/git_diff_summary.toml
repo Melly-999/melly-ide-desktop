@@ -1,0 +1,11 @@
+# Automatically generated - DO NOT EDIT!
+
+[[permission]]
+identifier = "allow-git-diff-summary"
+description = "Enables the git_diff_summary command without any pre-configured scope."
+commands.allow = ["git_diff_summary"]
+
+[[permission]]
+identifier = "deny-git-diff-summary"
+description = "Denies the git_diff_summary command without any pre-configured scope."
+commands.deny = ["git_diff_summary"]

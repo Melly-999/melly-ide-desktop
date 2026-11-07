@@ -1,0 +1,18 @@
+Melly IDE 0.7.0-alpha.3 — third-party notices
+NOT_FOR_DISTRIBUTION — local candidate
+
+Melly IDE original material controlled by Mateusz Ozimkiewicz: Copyright 2026 Mateusz Ozimkiewicz. See MELLY-IDE-APACHE-2.0.txt.
+Historical attribution: texts/melly-ide-legacy/MIT-LICENSE.txt.
+Third-party terms are separate. See texts/ and the inventory for package-specific notices.
+
+MPL-2.0 source for the corresponding crates (exact version and archive digest):
+cssparser 0.37.0 — https://static.crates.io/crates/cssparser/cssparser-0.37.0.crate — SHA-256 8c9cdaae01d5ed7882b04d795e7f752f46ff52d2fa3b50a20d28c464510bba98
+dtoa-short 0.3.5 — https://static.crates.io/crates/dtoa-short/dtoa-short-0.3.5.crate — SHA-256 cd1511a7b6a56299bd043a9c167a6d2bfb37bf84a6dfceaba651168adfb43c87
+option-ext 0.2.0 — https://static.crates.io/crates/option-ext/option-ext-0.2.0.crate — SHA-256 04744f49eae99ab78e0d5c0b603ab218f515ea8cfe5a456d7629ad883a3b6e7d
+selectors 0.38.0 — https://static.crates.io/crates/selectors/selectors-0.38.0.crate — SHA-256 8adfa1c298912827b8a28b223b3b874357397ae706e6190acd9bf28cee99114d
+
+NSIS 3.11 license and LZMA exception: texts/nsis-3.11/COPYING.
+See SOURCE-AVAILABILITY.txt. Private-preview Clerk and Convex SDKs are excluded by desktop staging. Confirm the final archive and installer notices before any release.
+The named license terms and this inventory do not settle brand and media rights.
+
+Pinned upstream supplements are listed in NOTICE-INVENTORY.json.

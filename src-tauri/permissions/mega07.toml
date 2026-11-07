@@ -1,0 +1,4 @@
+[[permission]]
+identifier = "allow-mega07-diagnostics"
+description = "MEGA-07 local diagnostics for the main window only: build identity, native capability status and bounded error-code counters. No paths, file contents or secrets; nothing is transmitted."
+commands.allow = ["app_diagnostics"]

@@ -1,0 +1,60 @@
+{
+  "name": "melly-ide",
+  "version": "0.7.0-alpha.3",
+  "description": "Offline-first multi-project code workspace with verified public GitHub source and guarded review; cloud integrations remain disconnected.",
+  "type": "module",
+  "main": "index.html",
+  "scripts": {
+    "start": "node server/dev.mjs",
+    "dev": "node server/dev.mjs",
+    "pretest": "npm run build:auth-sdk",
+    "test": "node --test tests/app.test.js tests/persistence.test.js tests/ui-accessibility.test.js tests/offline.test.js tests/backup.test.js tests/workspace.test.js tests/backup-v3.test.js tests/backend.test.mjs tests/memory.test.mjs tests/dashboard.test.js tests/ux02.test.js tests/auth01.test.js tests/auth01-backend.test.mjs tests/ai01.test.js tests/ai01-backend.test.mjs tests/storage-durability.test.js tests/shell-release.test.js tests/local-folder.test.js tests/mega04-agents.test.js tests/mega04-terminal.test.js tests/mega04-preview.test.js tests/mega04-git.test.js tests/mega07.test.js tests/mega08.test.js tests/mega09.test.js",
+    "test:browser": "node tests/browser-ui02.cjs && node tests/browser-offline.cjs && node tests/browser-backup.cjs",
+    "test:offline": "node tests/browser-offline.cjs",
+    "test:backup": "node tests/browser-backup.cjs",
+    "typecheck": "tsc --noEmit",
+    "test:workspace": "node --test tests/workspace.test.js tests/backend.test.mjs tests/memory.test.mjs",
+    "test:mega-browser": "node tests/browser-mega.cjs",
+    "test:mvp01": "node --test tests/backup-v3.test.js",
+    "test:mvp01-browser": "node tests/browser-mvp01.cjs",
+    "test:mvp021-browser": "node tests/browser-mvp021.cjs",
+    "shell:fingerprint": "node scripts/shell-fingerprint.mjs",
+    "desktop:prepare": "node scripts/prepare-desktop.mjs",
+    "desktop:check": "cargo check --offline --manifest-path src-tauri/Cargo.toml",
+    "test:premium-browser": "node tests/browser-premium.cjs",
+    "build:private-preview": "npm run build:auth-sdk && node scripts/build-private-preview.mjs",
+    "serve:private-preview": "node scripts/serve-private-preview.mjs",
+    "test:ux02-browser": "node tests/browser-ux02.cjs",
+    "build:auth-sdk": "node scripts/auth/build-sdk.mjs",
+    "test:auth-browser": "node tests/browser-auth01.cjs",
+    "test:ai01-browser": "node tests/browser-ai01.cjs",
+    "test:mega08-browser": "node tests/browser-mega08.cjs",
+    "test:mega09-browser": "node tests/browser-mega09.cjs"
+  },
+  "keywords": [
+    "melly-ide",
+    "guarded-review",
+    "mobile-ide",
+    "code-editor",
+    "mcp",
+    "skills",
+    "automations",
+    "swift",
+    "javascript"
+  ],
+  "license": "Apache-2.0",
+  "dependencies": {
+    "@clerk/clerk-js": "6.40.0",
+    "@cortexmemory/sdk": "0.37.0",
+    "convex": "1.47.0"
+  },
+  "devDependencies": {
+    "convex-test": "0.0.64",
+    "esbuild": "0.27.0",
+    "playwright": "1.62.1",
+    "typescript": "7.0.2"
+  },
+  "engines": {
+    "node": ">=24.15.0"
+  }
+}

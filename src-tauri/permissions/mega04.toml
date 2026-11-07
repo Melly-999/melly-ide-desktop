@@ -1,0 +1,4 @@
+[[permission]]
+identifier = "allow-mega04-devcenter"
+description = "MEGA-04 Dev Center for the main window only: read-only native Git inspection of the open Local Folder, isolated Live Preview window control and terminal capability status. No writes, no Git mutation, no process start, no arbitrary absolute path. The preview window receives no capability."
+commands.allow = ["git_status", "git_diff", "preview_capability", "preview_mount_files", "preview_mount_folder", "preview_open", "preview_resize", "preview_close", "preview_events", "terminal_capability", "terminal_start"]

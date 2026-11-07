@@ -1,0 +1,83 @@
+/* MEGA-04 Dev Center — Midnight theme, reuses premium/ux02 surfaces and buttons. */
+.primary-navigation { grid-template-columns:repeat(5,minmax(0,1fr)); width:460px; }
+.devcenter { max-width:1180px; margin:0 auto; padding:24px 20px 120px; }
+.devcenter-tabs { display:flex; gap:6px; flex-wrap:wrap; margin:6px 0 14px; padding:5px; border:1px solid #2c2a3c; border-radius:12px; background:#11131d; width:max-content; max-width:100%; }
+.devcenter-tabs [role="tab"] { background:transparent; color:#bab7cc; border:0; border-radius:9px; min-height:40px; min-width:44px; padding:8px 16px; font:600 13px var(--font-sans); cursor:pointer; }
+.devcenter-tabs [role="tab"][aria-selected="true"] { background:#302044; color:#e4d4ff; }
+.devcenter-tabs [role="tab"]:focus-visible, .devcenter :focus-visible, .preview-dock :focus-visible { outline:3px solid #d5b9ff; outline-offset:2px; }
+.devcenter-panel { display:grid; gap:12px; }
+.devcenter-panel[hidden] { display:none; }
+.devcenter-card h2 { margin:0 0 8px; }
+.devcenter-row { display:flex; flex-wrap:wrap; gap:10px 16px; align-items:center; }
+.devcenter-row label, #jobForm label { color:#bab7cc; font-size:12px; display:flex; flex-direction:column; gap:4px; }
+.devcenter select, .devcenter input, .devcenter textarea { background:#0f111b; color:#ece6fa; border:1px solid #443855; border-radius:8px; min-height:40px; padding:8px 10px; font:13px var(--font-sans); max-width:100%; }
+#jobForm { display:grid; gap:6px; grid-template-columns:minmax(0,1fr); }
+#jobForm textarea { resize:vertical; }
+#jobForm select, #jobForm input, #jobForm textarea { max-width:100%; min-width:0; }
+#jobForm > * { min-width:0; }
+.devcenter-actions { display:flex; flex-wrap:wrap; gap:8px; align-items:center; margin:10px 0; }
+.devcenter-status { font-size:13px; color:#d8caee; margin:8px 0; }
+.devcenter-status[data-error="true"] { color:#ffb4c0; }
+.devcenter-facts { display:grid; grid-template-columns:repeat(auto-fit,minmax(200px,1fr)); gap:10px; margin:0; }
+.devcenter-facts dt { font-size:10px; letter-spacing:.6px; text-transform:uppercase; color:#9d97b3; }
+.devcenter-facts dd { margin:2px 0 0; font-size:13px; color:#ece6fa; overflow-wrap:anywhere; }
+.devcenter-notices, .devcenter-diagnostics { margin:10px 0 0; padding-left:18px; font-size:12px; color:#e7d6a8; }
+.devcenter-diagnostics li[data-kind="blocked"] { color:#ffcf99; }
+.devcenter-diagnostics li[data-kind="error"], .devcenter-diagnostics li[data-kind="resource"] { color:#ffb4c0; }
+.preview-stage { border:1px solid #2c2a3c; border-radius:12px; background:#0a0b12; min-height:420px; overflow:auto; padding:10px; }
+.preview-stage iframe { display:block; margin:0 auto; height:min(70vh,760px); max-width:none; border:1px solid #443855; border-radius:8px; background:#fff; }
+.preview-dock { position:fixed; z-index:120; top:var(--app-header-height,64px); right:0; bottom:0; width:min(560px,100%); background:#0f111bf7; border-left:1px solid #39314b; box-shadow:-12px 0 40px #0008; display:flex; flex-direction:column; padding:10px; gap:8px; }
+.preview-dock[hidden] { display:none; }
+.preview-dock-bar { display:flex; justify-content:space-between; align-items:center; gap:8px; color:#e4d4ff; }
+.preview-dock .preview-stage { flex:1; min-height:0; }
+.preview-dock .preview-stage iframe { height:100%; min-height:360px; }
+.git-entries, .agent-list, .job-list { list-style:none; margin:0; padding:0; display:grid; gap:6px; }
+.git-entries li { display:grid; grid-template-columns:minmax(0,1fr) auto; gap:2px 10px; align-items:center; padding:8px 10px; border:1px solid #2c2a3c; border-radius:10px; background:#11131d; }
+.git-path { font-family:var(--font-mono,ui-monospace,monospace); font-size:12px; overflow-wrap:anywhere; color:#ece6fa; }
+.git-entries small { grid-column:1; color:#b2acc4; font-size:11px; }
+.git-entry-actions { grid-column:2; grid-row:1 / span 2; display:flex; gap:6px; }
+.git-diff, .terminal-output { margin:0; padding:12px; border:1px solid #2c2a3c; border-radius:12px; background:#07080e; color:#d9d4ea; font:12px/1.5 var(--font-mono,ui-monospace,monospace); white-space:pre-wrap; overflow-wrap:anywhere; max-height:60vh; overflow:auto; }
+.git-diff .add { color:#9be8b0; background:#10301c; }
+.git-diff .del { color:#ffb4c0; background:#3a1520; }
+.git-diff .hunk { color:#b999ff; }
+.agent-list li { display:flex; flex-wrap:wrap; align-items:center; gap:6px 10px; padding:8px 0; border-bottom:1px solid #22202f; }
+.agent-list small { flex-basis:100%; color:#b2acc4; }
+.job-row { width:100%; display:grid; grid-template-columns:minmax(0,1fr) auto; gap:2px 10px; text-align:left; background:#11131d; color:#ece6fa; border:1px solid #2c2a3c; border-radius:10px; padding:10px; min-height:44px; cursor:pointer; font:13px var(--font-sans); }
+.job-row[aria-pressed="true"] { border-color:#9262ff; background:#1b1530; }
+.job-row small { color:#b2acc4; font-size:11px; }
+.job-state { font-size:10px; text-transform:uppercase; letter-spacing:.6px; padding:3px 6px; border-radius:6px; border:1px solid #50455d; }
+.job-state[data-state="completed"] { color:#9be8b0; border-color:#2d6b45; }
+.job-state[data-state="failed"], .job-state[data-state="cancelled"] { color:#ffb4c0; border-color:#6b2d3c; }
+.job-state[data-state="running"] { color:#ffe08a; border-color:#6b5a2d; }
+.job-events { margin:0; padding-left:18px; font-size:12px; color:#d8caee; display:grid; gap:4px; }
+#terminalApproval { background:#151925; color:#ece6fa; border:1px solid #443855; border-radius:14px; max-width:440px; }
+#terminalApproval::backdrop { background:#000a; }
+@media (max-width:700px) {
+  .primary-navigation { width:100%; }
+  .devcenter { padding:16px 12px 120px; }
+  .devcenter-tabs { width:100%; }
+  .devcenter-tabs [role="tab"] { flex:1; padding:8px 6px; }
+  .git-entries li { grid-template-columns:1fr; }
+  .git-entry-actions { grid-column:1; grid-row:auto; }
+  .preview-stage { min-height:320px; }
+}
+/* MEGA-07 diagnostics tab and loading states. */
+.diag-events { max-height:50vh; overflow:auto; }
+.diag-events li { overflow-wrap:anywhere; }
+.diag-events small { color:var(--text-muted, #a4a4ad); }
+#gitStatusLine[data-state="loading"]::before { content:''; display:inline-block; width:10px; height:10px; margin-right:6px; border-radius:50%; border:2px solid #b89aea; border-right-color:transparent; animation:diag-spin .8s linear infinite; vertical-align:-1px; }
+#gitBody[aria-busy="true"] { opacity:.6; }
+@keyframes diag-spin { to { transform:rotate(360deg); } }
+@media (prefers-reduced-motion: reduce) { #gitStatusLine[data-state="loading"]::before { animation:none; } }
+/* MEGA-08: execution, agent, workspace and Git status strip; command runner; diff review */
+.dev-status { list-style:none; display:flex; flex-wrap:wrap; gap:6px; margin:0 0 12px; padding:0; }
+.dev-status li { font-size:11px; color:#d8caee; border:1px solid #2c2a3c; border-radius:999px; padding:4px 10px; background:#11131d; max-width:100%; overflow-wrap:anywhere; }
+.dev-status li strong { color:#9d97b3; font-weight:600; }
+.dev-status li[data-state="on"] { border-color:#2d6b45; }
+.dev-status li[data-state="busy"] { border-color:#9262ff; }
+.dev-status li[data-state="attention"] { border-color:#8a6a2d; color:#f1dca8; }
+.runner-form label, #jobForm label { color:#bab7cc; font-size:12px; display:flex; flex-direction:column; gap:4px; }
+.runner-form textarea, #runnerProgram { font-family:var(--font-mono,ui-monospace,monospace); }
+.git-diff .hunk[data-current] { outline:2px solid #b999ff; outline-offset:1px; }
+.git-entries li[data-job-changed="true"] .git-path { color:#f1dca8; }
+@media (max-width:600px) { .dev-status li { font-size:10px; } }

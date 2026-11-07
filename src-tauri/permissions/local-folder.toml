@@ -1,0 +1,14 @@
+[[permission]]
+identifier = "allow-local-folder-preview"
+description = "User-selected local folder: bounded read-only sessions. No write, shell or arbitrary absolute path command."
+commands.allow = ["folder_open", "folder_list", "folder_read", "folder_version", "folder_close"]
+
+[[permission]]
+identifier = "allow-local-folder-save"
+description = "Explicit UTF-8 save to an existing file in the selected folder: exclusive handle, content version check, temp-file + rename replacement. Restoring or discarding an interrupted-save artifact is a separate explicit action that never overwrites a file."
+commands.allow = ["folder_save", "folder_restore_interrupted", "folder_discard_interrupted"]
+
+[[permission]]
+identifier = "allow-mega09-workspace"
+description = "MEGA-09 workspace navigation for the main window only: bounded read-only file index and literal text search inside the open Local Folder session (same path guards as listing and reading, skipped heavy directories reported), and recent folders whose absolute paths stay native. Resuming a recent folder only reopens the Windows folder dialog at that folder; the person's selection opens the session. No write, shell, process or absolute-path command."
+commands.allow = ["folder_index", "folder_search", "folder_recent", "folder_forget", "folder_resume"]

@@ -1,0 +1,28 @@
+# Store and check out source and documentation with LF.
+* text=auto eol=lf
+
+# Preserve media and archive bytes.
+*.png binary
+*.gif binary
+*.ico binary
+*.icns binary
+*.jpg binary
+*.jpeg binary
+*.webp binary
+*.bmp binary
+*.zip binary
+*.pdf binary
+*.wasm binary
+*.mp4 binary
+*.woff2 binary
+
+# Keep inherited Markdown breaks, byte-verified media and embedded source text.
+docs/ROADMAP.md whitespace=-blank-at-eol
+js/chat.js whitespace=-blank-at-eol
+js/data/samples.js whitespace=-blank-at-eol
+js/hub.js whitespace=-blank-at-eol
+styles/main.css whitespace=-blank-at-eol
+tests/app.test.js whitespace=-blank-at-eol
+
+# Preserve the exact upstream license and notice bytes through Git.
+src-tauri/release-notices/** -text

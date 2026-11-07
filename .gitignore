@@ -1,0 +1,51 @@
+# What a project can make again, and nobody needs to keep.
+node_modules/
+.venv/
+venv/
+__pycache__/
+target/
+vendor/
+.gradle/
+DerivedData/
+.next/cache/
+.turbo/
+.cache/
+.DS_Store
+*.log
+
+# MEGA-01 generated desktop assets; browser databases are never packaged.
+desktop-dist/
+/runtime/
+/src-tauri/gen/
+/private-preview/
+/dist/
+*.msi
+*.exe
+*.pdb
+
+# Authentication and deployment configuration must never enter Git.
+.env
+.env.*
+
+# Local tools, user profiles and QA evidence.
+.agents/
+.antigravity/
+.claude/
+.codex/
+.cursor/
+.aws/
+.convex/
+.npmrc
+*.pem
+*.pfx
+*.key
+/.qa/
+/qa/
+/qa-output/
+/qa-profile/
+/playwright-report/
+/test-results/
+/webview2-profile/
+
+# Convex AI guidance is downloaded by `npx convex ai-files install`; keep it local.
+/convex/_generated/ai/
