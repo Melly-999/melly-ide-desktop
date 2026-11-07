@@ -1,6 +1,6 @@
 # Getting started on Windows
 
-Use the verified Private Alpha source candidate from its root directory.
+Run every command from the repository root. No installer is published yet, so building from source is currently the only way to try Melly IDE.
 
 ## Browser developer view
 
@@ -35,7 +35,7 @@ cargo build --locked --target x86_64-pc-windows-msvc --manifest-path src-tauri/C
 cargo run --locked --target x86_64-pc-windows-msvc --manifest-path src-tauri/Cargo.toml
 ```
 
-Preparation writes generated desktop assets. The build produces a developer executable. The local run opens a Windows application profile, so use a disposable profile and synthetic folder for QA. The README's native media comes from the historical MEGA-08.2/09 capture. See [Native capture](../showcase/NATIVE-CAPTURE.md) for its provenance.
+Preparation writes generated desktop assets. The build produces a developer executable. The local run opens a Windows application profile, so use a disposable profile and synthetic folder for QA. The README's screenshots come from the 0.7.0-alpha.3 Windows Sandbox acceptance run. See [Media sources](../showcase/MEDIA-SOURCES.md) for their provenance.
 
 ## Installing a distributed alpha build
 

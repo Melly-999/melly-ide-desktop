@@ -2,6 +2,12 @@
 
 This log describes local source milestones. Entries do not establish commits, hosted CI, deployment or public releases.
 
+## Unreleased — documentation
+
+- Redesign the README as a product landing page with original Orbit brand compositions and real 0.7.0-alpha.3 Windows Sandbox captures of a synthetic project. Provenance is in [Media sources](docs/showcase/MEDIA-SOURCES.md).
+- Add a 1280 × 640 social preview image, an issue chooser with security and getting-started links, and owner steps for repository settings in [GitHub presentation](docs/showcase/GITHUB-PRESENTATION.md).
+- No application, native, installer or release change.
+
 ## 0.7.0-alpha.3 — unsigned pre-release build
 
 - Unsigned Windows x64 EXE and current-user NSIS installer built locally with a CycloneDX SBOM, third-party notice archive and source manifest.

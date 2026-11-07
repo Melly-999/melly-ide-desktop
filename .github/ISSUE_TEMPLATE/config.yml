@@ -1,0 +1,11 @@
+blank_issues_enabled: false
+contact_links:
+  - name: Report a security vulnerability
+    url: https://github.com/Melly-999/melly-ide-desktop/blob/main/SECURITY.md
+    about: Do not open a public issue. Follow the private reporting steps in SECURITY.md.
+  - name: Getting started on Windows
+    url: https://github.com/Melly-999/melly-ide-desktop/blob/main/docs/product/GETTING-STARTED-WINDOWS.md
+    about: Build and run Melly IDE from source. No installer is published yet.
+  - name: FAQ
+    url: https://github.com/Melly-999/melly-ide-desktop/blob/main/docs/product/FAQ.md
+    about: Terminal, providers, platforms, licensing and distribution questions.

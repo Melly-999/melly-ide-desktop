@@ -1,6 +1,28 @@
 # Media sources and reproduction
 
-**The native captures and brand compositions below are withheld from the public source** until their media rights are confirmed. This page keeps their provenance. Two capture classes existed in `docs/assets/showcase/`. They must never be confused.
+## README media (0.7.0-alpha.3)
+
+Every image in [README.md](../../README.md) lives in [`docs/assets/readme/`](../assets/readme/). There are two kinds, and they are labeled differently on the page.
+
+**Real captures.** Five frames come from the Windows Sandbox acceptance run of the 0.7.0-alpha.3 executable on 2026-11-07. EXE SHA-256 `c1f8eeb3a9797f65223860ea9119e9307c34288adaa7f25b535875dfd505a7a8`, unsigned. The guest was an offline Windows 11 Sandbox (generic `WDAGUtilityAccount`), and the opened folder was a disposable `C:\synthetic-project` with `src/app.ts` and `README.md`. Each frame was cropped to the Melly IDE window only. That removes the Sandbox desktop wallpaper (third-party imagery), the desktop icons and the taskbar. Pixels inside the window were not edited, painted, scaled or reordered. No GIF or recording is used.
+
+| Source frame (SHA-256) | Window crop | Second crop | Used in |
+|---|---|---|---|
+| `S11c-saved.png` (`6dd03b8e…71e5`) | 138,131 → 1418,1057 | none | `melly-ide-hero.png`, `social-preview.png` |
+| `S14-palette.png` (`d30a9f74…5d95`) | 138,131 → 1418,1058 | 280,90 → 990,794 | `showcase-navigation.png` (01) |
+| `S13a-quickopen.png` (`54b02137…a617`) | 138,131 → 1418,1058 | 280,90 → 990,420 | `showcase-navigation.png` (02) |
+| `S13c-find-in-files.png` (`30d1c291…5559`) | 138,131 → 1418,1058 | 280,90 → 990,420 | `showcase-navigation.png` (03) |
+| `S17a-exec-enable-dialog.png` (`94408ebc…5e6f`) | 138,131 → 1418,1057 | 40,120 → 1240,640 | `showcase-approval.png` |
+
+Each frame was reviewed visually for local paths, account names, e-mail addresses, tokens and private content. The only path shown is the synthetic project. The Sandbox used a Polish system locale, so the native dialog buttons read *Tak* / *Nie*. The README says so. The session did not open a Git repository or the Agents tab, so the README shows no Git or Agent Control Center screenshot. Older-build captures are not substituted.
+
+**Brand compositions.** The wordmarks, hero and gallery frames, how-it-works flow, social preview and pillar icons are original HTML/CSS/SVG layouts authored for MEGA-GITHUB-PREMIUM-01. They were rasterized locally with Playwright Chromium at fixed sizes. Re-rendering produced byte-identical PNGs. The only raster brand input is the approved Orbit derivative `images/melly-512.png` (SHA-256 `ec728884…d1e3`). It is placed unmodified on a black rounded tile; it is not regenerated, recolored or remasked. Text uses Source Sans 3 (SIL Open Font License 1.1) and Ubuntu Mono (Ubuntu Font Licence 1.0), rendered from local font files. No external media service, stock image or competitor material was used. PNGs carry no text or EXIF metadata chunks.
+
+The Orbit statements in [Licensing scope](../product/LICENSING.md#name-and-logo) apply to the embedded icon. Like every image in this repository, these files are not licensed under Apache-2.0.
+
+## Withheld historical media
+
+**The native captures and brand compositions below are withheld from the public source** until their media rights are confirmed. This page keeps their provenance. Two capture classes existed in `docs/assets/showcase/`. They must never be confused. None of them is used by the current README.
 
 | Class | Location | Source | Used by README |
 |---|---|---|---|
