@@ -5,7 +5,7 @@ contact_links:
     about: Do not open a public issue. Follow the private reporting steps in SECURITY.md.
   - name: Getting started on Windows
     url: https://github.com/Melly-999/melly-ide-desktop/blob/main/docs/product/GETTING-STARTED-WINDOWS.md
-    about: Build and run Melly IDE from source. No installer is published yet.
+    about: Download and install the experimental Windows Alpha or build from source. Follow the getting-started instructions.
   - name: FAQ
     url: https://github.com/Melly-999/melly-ide-desktop/blob/main/docs/product/FAQ.md
     about: Terminal, providers, platforms, licensing and distribution questions.

@@ -4,7 +4,7 @@
 
 The local media in [README.md](../../README.md) lives in [`docs/assets/readme/`](../assets/readme/). There are two kinds, and they are labeled differently on the page.
 
-**Real captures.** Five frames come from the Windows Sandbox acceptance run of the 0.7.0-alpha.3 executable on 2026-11-07. EXE SHA-256 `c1f8eeb3a9797f65223860ea9119e9307c34288adaa7f25b535875dfd505a7a8`, unsigned. The guest was an offline Windows 11 Sandbox (generic `WDAGUtilityAccount`), and the opened folder was a disposable `C:\synthetic-project` with `src/app.ts` and `README.md`. Each frame was cropped to the Melly IDE window only. That removes the Sandbox desktop wallpaper (third-party imagery), the desktop icons and the taskbar. Pixels inside the window were not edited, painted, scaled or reordered. No GIF or recording is used.
+**Real captures.** Five frames come from the Windows Sandbox acceptance run of the 0.7.0-alpha.3 executable on 2026-11-07. EXE SHA-256 `c1f8eeb3a9797f65223860ea9119e9307c34288adaa7f25b535875dfd505a7a8`, unsigned. The guest was an offline Windows 11 Sandbox (generic `WDAGUtilityAccount`), and the opened folder was a disposable `C:\synthetic-project` with `src/app.ts` and `README.md`. Each frame was cropped to the Melly IDE window only. That removes the Sandbox desktop wallpaper (third-party imagery), the desktop icons and the taskbar. Pixels inside the window were not edited, painted, scaled or reordered. These five frames are stills; the README animation is documented separately below.
 
 | Source frame (SHA-256) | Window crop | Second crop | Used in |
 |---|---|---|---|
@@ -17,6 +17,23 @@ The local media in [README.md](../../README.md) lives in [`docs/assets/readme/`]
 Each frame was reviewed visually for local paths, account names, e-mail addresses, tokens and private content. The only path shown is the synthetic project. The Sandbox used a Polish system locale, so the native dialog buttons read *Tak* / *Nie*. The README says so. The session did not open a Git repository or the Agents tab, so the README shows no Git or Agent Control Center screenshot. Older-build captures are not substituted.
 
 **Brand compositions.** The wordmarks, hero and gallery frames, how-it-works flow, social preview and pillar icons are original HTML/CSS/SVG layouts authored for MEGA-GITHUB-PREMIUM-01. They were rasterized locally with Playwright Chromium at fixed sizes. Re-rendering produced byte-identical PNGs. The only raster brand input is the approved Orbit derivative `images/melly-512.png` (SHA-256 `ec728884…d1e3`). It is placed unmodified on a black rounded tile; it is not regenerated, recolored or remasked. Text uses Source Sans 3 (SIL Open Font License 1.1) and Ubuntu Mono (Ubuntu Font Licence 1.0), rendered from local font files. No external media service, stock image or competitor material was used. PNGs carry no text or EXIF metadata chunks.
+
+### README recording (0.7.0-alpha.3)
+
+`melly-ide-live-demo.gif` is one continuous screen recording of the 0.7.0-alpha.3 executable, made on 2026-11-09 in a separate offline Windows Sandbox session (generic `WDAGUtilityAccount`, networking and clipboard disabled). The executable is the published release asset, not a rebuild: SHA-256 `c1f8eeb3a9797f65223860ea9119e9307c34288adaa7f25b535875dfd505a7a8`, unsigned. The guest's WebView2 runtime registration was stale, so the app was started with `WEBVIEW2_BROWSER_EXECUTABLE_FOLDER` pointing at the runtime already installed in the guest. The opened folder was a disposable synthetic project, `C:\orbit-dashboard`, with six files.
+
+FFmpeg `gdigrab` inside the guest captured a fixed 1344 × 820 region of the app's client area at 15 fps into lossless FFV1. The region excludes the title bar, the Sandbox wallpaper (third-party imagery), desktop icons and the taskbar. The mouse pointer was not drawn. All input was real keyboard input to the running app. One click before the recording moved focus into the app.
+
+| Step | What the app did |
+|---|---|
+| Workspace | Local Folder explorer with `src/` expanded, `src/app.ts` open and saved on disk |
+| Navigation | Command palette filtered to "go to file", then Go to File for "appr" (6 files indexed) opens `src/lib/approvals.ts` |
+| Edit and Save | `APPROVAL_TTL_MS` changed from `30_000` to `45_000`, shown as unsaved, then saved with Ctrl+S |
+| Search | Find in Files for `APPROVAL_TTL_MS`: 4 matches in 2 files, then the first result opens |
+
+The Save was verified on disk inside the guest. The file's SHA-256 changed from `59392120…031b` to `506099a4…e911`, and the only changed line is `export const APPROVAL_TTL_MS = 45_000;`. When Find in Files reopens, it briefly shows the previous search's results from the same session. The refreshed results show `45_000`.
+
+The GIF uses source seconds 1.6–17.2 in their original order, played back uniformly at 1.4× speed. It was scaled to 960 × 586 with Lanczos and encoded at 12 fps with a 192-colour palette (FFmpeg `palettegen`/`paletteuse`). The result is 11.16 s, 134 frames and 675 411 bytes. GIF SHA-256 is `ae37e6604d76d280ec4afb70fb2cadd1eb86ef850bb523e4d5496f75765568cc`. No frame was added, reordered, retouched or generated, and no cursor or animation was synthesized. The recording shows no AI provider, agent job, terminal or cloud sync. Every frame was reviewed for paths, accounts, tokens and private content; the only paths shown belong to the synthetic project. The raw recording and logs are kept outside the repository.
 
 The Orbit statements in [Licensing scope](../product/LICENSING.md#name-and-logo) apply to the embedded icon. Like every image in this repository, these files are not licensed under Apache-2.0.
 
