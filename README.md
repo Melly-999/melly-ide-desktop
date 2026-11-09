@@ -33,7 +33,7 @@ A local-first coding workspace for Windows. Open a real folder, edit deliberatel
   <img src="docs/assets/readme/melly-ide-live-demo.gif" width="100%" alt="A real screen recording of the Melly IDE 0.7.0-alpha.3 Windows app with a synthetic project: the command palette opens Go to File, src/lib/approvals.ts changes from 30_000 to 45_000 and is saved explicitly to disk, then Find in Files lists four APPROVAL_TTL_MS matches in two files and opens one.">
 </p>
 
-<p align="center"><sub>Real Melly IDE v0.7.0-alpha.3 Windows capture using a synthetic project. Shows navigation, explicit Save and local search. Does not demonstrate paid AI execution. Played back at 1.4× speed; <a href="docs/showcase/MEDIA-SOURCES.md#readme-recording-070-alpha3">how it was recorded</a>.</sub></p>
+<p align="center"><sub>Real Melly IDE v0.7.0-alpha.3 Windows capture using a synthetic project. Shows navigation, explicit Save and local search. Does not demonstrate paid AI execution. Played back at 1.4× speed, with one cut to the finished search; <a href="docs/showcase/MEDIA-SOURCES.md#readme-recording-070-alpha3">how it was recorded</a>.</sub></p>
 
 The screenshots below come from the same 0.7.0-alpha.3 executable in an earlier Windows Sandbox session. The background and caption around each frame are a presentation layer; the app pixels are unchanged.
 
